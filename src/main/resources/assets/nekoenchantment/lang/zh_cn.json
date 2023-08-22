@@ -1,11 +1,16 @@
 {
-  "enchantment.nekoenchantment.neko_blade": "猫刃",
-  "enchantment.nekoenchantment.neko_god": "猫神",
-  "enchantment.nekoenchantment.neko_meow": "猫喵",
-  "enchantment.nekoenchantment.neko_king": "猫王",
-  "enchantment.nekoenchantment.neko_emperor": "猫皇",
+  "enchantment.nekoenchantment.neko_blade": "ฅ 猫刃 ฅ",
+  "enchantment.nekoenchantment.neko_god": "ฅ 猫神 ฅ",
+  "enchantment.nekoenchantment.neko_meow": "ฅ 猫喵 ฅ",
+  "enchantment.nekoenchantment.neko_king": "ฅ 猫王 ฅ",
+  "enchantment.nekoenchantment.neko_emperor": "ฅ 猫皇 ฅ",
+  "enchantment.nekoenchantment.neko_day": "ฅ 猫昼 ฅ",
+  "enchantment.nekoenchantment.neko_night": "ฅ 猫夜 ฅ",
+  "enchantment.nekoenchantment.neko_ninja": "ฅ 猫忍 ฅ",
+  "enchantment.nekoenchantment.neko_soul": "ฅ 猫魂 ฅ",
 
 
-  "tooltips.nekoenchantment.refine": "强化数",
-  "tooltips.nekoenchantment.kills": "击杀数"
+  "tooltips.nekoenchantment.refine": "ฅ强化数ฅ",
+  "tooltips.nekoenchantment.kills": "ฅ击杀数ฅ",
+  "tooltips.nekoenchantment.souls": "ฅ灵魂数ฅ"
 }

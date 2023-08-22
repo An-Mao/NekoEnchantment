@@ -1,5 +1,6 @@
 package anmao.idoll.nekochantment.enchantment.nekoking;
 
+import anmao.idoll.nekochantment.am._AM_Constant;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.ItemStack;
@@ -15,7 +16,7 @@ public class NekoKing extends Enchantment {
     public float getDamageBonus(int level, MobType mobType, ItemStack enchantedItem) {
         float refine = 0;
         if (enchantedItem.getTag() != null) {
-            refine += enchantedItem.getTag().getFloat("refine") / 20;
+            refine += enchantedItem.getTag().getFloat(_AM_Constant.ENCHANTMENT_KEY_REFINE) / 20;
         }
         return refine + 1;
     }
@@ -23,5 +24,10 @@ public class NekoKing extends Enchantment {
     @Override
     public int getMaxLevel() {
         return 1;
+    }
+
+    @Override
+    public boolean isTreasureOnly() {
+        return true;
     }
 }

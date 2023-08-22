@@ -1,6 +1,7 @@
 package anmao.idoll.nekochantment.enchantment.nekoemperor;
 
 import anmao.idoll.nekochantment.NekoEnchantment;
+import anmao.idoll.nekochantment.am._AM_Constant;
 import anmao.idoll.nekochantment.enchantment.EnchantmentRegister;
 import com.google.common.eventbus.Subscribe;
 import net.minecraft.world.item.ItemStack;
@@ -17,7 +18,7 @@ public class NekoEmperorEvent {
             for (ItemStack itemStack : handlist){
                 if (itemStack.getEnchantmentLevel(EnchantmentRegister.NEKO_EMPEROR.get()) >0){
                     if (itemStack.getTag() != null) {
-                        itemStack.getTag().putInt("kills",itemStack.getTag().getInt("kills")+1);
+                        itemStack.getTag().putInt(_AM_Constant.ENCHANTMENT_KEY_KILL,itemStack.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_KILL)+1);
                     }
                 }
             }

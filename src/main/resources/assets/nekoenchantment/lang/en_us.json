@@ -1,11 +1,16 @@
 {
-  "enchantment.nekoenchantment.neko_blade": "Neko Blade",
-  "enchantment.nekoenchantment.neko_god": "Neko God",
-  "enchantment.nekoenchantment.neko_meow": "Neko Meow",
-  "enchantment.nekoenchantment.neko_king": "Neko King",
-  "enchantment.nekoenchantment.neko_emperor": "Neko Emperor",
+  "enchantment.nekoenchantment.neko_blade": "ฅ Neko Blade ฅ",
+  "enchantment.nekoenchantment.neko_god": "ฅ Neko God ฅ",
+  "enchantment.nekoenchantment.neko_meow": "ฅ Neko Meow ฅ",
+  "enchantment.nekoenchantment.neko_king": "ฅ Neko King ฅ",
+  "enchantment.nekoenchantment.neko_emperor": "ฅ Neko Emperor ฅ",
+  "enchantment.nekoenchantment.neko_day": "ฅ Neko Day ฅ",
+  "enchantment.nekoenchantment.neko_night": "ฅ Neko Night ฅ",
+  "enchantment.nekoenchantment.neko_ninja": "ฅ Neko Ninja ฅ",
+  "enchantment.nekoenchantment.neko_soul": "ฅ Neko Soul ฅ",
 
 
-  "tooltips.nekoenchantment.refine": "refine",
-  "tooltips.nekoenchantment.kills": "kills"
+  "tooltips.nekoenchantment.refine": "ฅrefineฅ",
+  "tooltips.nekoenchantment.kills": "ฅkillsฅ",
+  "tooltips.nekoenchantment.souls": "ฅsoulsฅ"
 }

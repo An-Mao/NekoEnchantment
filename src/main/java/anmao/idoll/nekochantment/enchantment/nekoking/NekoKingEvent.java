@@ -1,6 +1,7 @@
 package anmao.idoll.nekochantment.enchantment.nekoking;
 
 import anmao.idoll.nekochantment.NekoEnchantment;
+import anmao.idoll.nekochantment.am._AM_Constant;
 import anmao.idoll.nekochantment.enchantment.EnchantmentRegister;
 import net.minecraft.commands.arguments.NbtTagArgument;
 import net.minecraft.nbt.CompoundTag;
@@ -37,7 +38,7 @@ public class NekoKingEvent {
                     ItemStack oitem = anvilUpdateEvent.getLeft().copy();
                     CompoundTag oitemnbt = oitem.getTag();
                     if (oitemnbt != null) {
-                        oitemnbt.putInt("refine",oitemnbt.getInt("refine") + re);
+                        oitemnbt.putInt(_AM_Constant.ENCHANTMENT_KEY_REFINE,oitemnbt.getInt(_AM_Constant.ENCHANTMENT_KEY_REFINE) + re);
                     }
                     oitem.setTag(oitemnbt);
                     anvilUpdateEvent.setOutput(oitem);

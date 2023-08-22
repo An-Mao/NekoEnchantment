@@ -1,5 +1,6 @@
 package anmao.idoll.nekochantment.enchantment.nekoemperor;
 
+import anmao.idoll.nekochantment.am._AM_Constant;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,7 +18,7 @@ public class NekoEmperor extends Enchantment {
     public float getDamageBonus(int level, MobType mobType, ItemStack enchantedItem) {
         float kill = 0;
         if (enchantedItem.getTag() != null) {
-            kill += enchantedItem.getTag().getFloat("refine") / 50;
+            kill += enchantedItem.getTag().getFloat(_AM_Constant.ENCHANTMENT_KEY_KILL) / 50;
         }
         return kill + 1;
     }
@@ -25,5 +26,9 @@ public class NekoEmperor extends Enchantment {
     @Override
     public int getMaxLevel() {
         return 1;
+    }
+    @Override
+    public boolean isTreasureOnly() {
+        return true;
     }
 }
