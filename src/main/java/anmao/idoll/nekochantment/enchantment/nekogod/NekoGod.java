@@ -24,7 +24,7 @@ public class NekoGod extends Enchantment {
                 if (p > _AM.getRandomNumber(1,100)){
                     //32767
                     p = (serverPlayer.experienceLevel/999) * 10;
-                    mob.setHealth(Math.max(0.0F,mob.getMaxHealth() * p - mob.getHealth()));
+                    mob.setHealth(Math.max(0.0F,mob.getHealth() - mob.getMaxHealth() * p ));
                 }
             }
         }
