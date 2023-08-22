@@ -8,9 +8,11 @@
   "enchantment.nekoenchantment.neko_night": "ฅ 猫夜 ฅ",
   "enchantment.nekoenchantment.neko_ninja": "ฅ 猫忍 ฅ",
   "enchantment.nekoenchantment.neko_soul": "ฅ 猫魂 ฅ",
-
+  "enchantment.nekoenchantment.neko_blessing": "ฅ 猫佑 ฅ",
+  "enchantment.nekoenchantment.neko_mirror": "ฅ 猫镜 ฅ",
 
   "tooltips.nekoenchantment.refine": "ฅ强化数ฅ",
   "tooltips.nekoenchantment.kills": "ฅ击杀数ฅ",
-  "tooltips.nekoenchantment.souls": "ฅ灵魂数ฅ"
+  "tooltips.nekoenchantment.souls": "ฅ灵魂数ฅ",
+  "tooltips.nekoenchantment.blessing": "ฅ护佑数ฅ"
 }

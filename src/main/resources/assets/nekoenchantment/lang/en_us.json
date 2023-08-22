@@ -8,9 +8,12 @@
   "enchantment.nekoenchantment.neko_night": "ฅ Neko Night ฅ",
   "enchantment.nekoenchantment.neko_ninja": "ฅ Neko Ninja ฅ",
   "enchantment.nekoenchantment.neko_soul": "ฅ Neko Soul ฅ",
+  "enchantment.nekoenchantment.neko_blessing": "ฅ Neko Blessing ฅ",
+  "enchantment.nekoenchantment.neko_mirror": "ฅ Neko Mirror ฅ",
 
 
   "tooltips.nekoenchantment.refine": "ฅrefineฅ",
   "tooltips.nekoenchantment.kills": "ฅkillsฅ",
-  "tooltips.nekoenchantment.souls": "ฅsoulsฅ"
+  "tooltips.nekoenchantment.souls": "ฅsoulsฅ",
+  "tooltips.nekoenchantment.blessing": "ฅblessingฅ"
 }

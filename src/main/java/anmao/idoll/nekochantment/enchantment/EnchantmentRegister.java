@@ -2,11 +2,13 @@ package anmao.idoll.nekochantment.enchantment;
 
 import anmao.idoll.nekochantment.NekoEnchantment;
 import anmao.idoll.nekochantment.enchantment.nekoblade.NekoBlade;
+import anmao.idoll.nekochantment.enchantment.nekoblessing.NekoBlessing;
 import anmao.idoll.nekochantment.enchantment.nekoday.NekoDay;
 import anmao.idoll.nekochantment.enchantment.nekoemperor.NekoEmperor;
 import anmao.idoll.nekochantment.enchantment.nekogod.NekoGod;
 import anmao.idoll.nekochantment.enchantment.nekoking.NekoKing;
 import anmao.idoll.nekochantment.enchantment.nekomeow.NekoMeow;
+import anmao.idoll.nekochantment.enchantment.nekomirror.NekoMirror;
 import anmao.idoll.nekochantment.enchantment.nekonight.NekoNight;
 import anmao.idoll.nekochantment.enchantment.nekoninja.NekoNinja;
 import anmao.idoll.nekochantment.enchantment.nekosoul.NekoSoul;
@@ -29,5 +31,7 @@ public class EnchantmentRegister {
     public static RegistryObject<Enchantment> NEKO_NIGHT = Enchantments.register("neko_night",()->new NekoNight(Enchantment.Rarity.RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
     public static RegistryObject<Enchantment> NEKO_NINJA = Enchantments.register("neko_ninja",()->new NekoNinja(Enchantment.Rarity.RARE, EnchantmentCategory.ARMOR, EquipmentSlot.CHEST));
     public static RegistryObject<Enchantment> NEKO_SOUL = Enchantments.register("neko_soul",()->new NekoSoul(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR, EquipmentSlot.CHEST));
+    public static RegistryObject<Enchantment> NEKO_BLESSING = Enchantments.register("neko_blessing",()->new NekoBlessing(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR, EquipmentSlot.FEET));
+    public static RegistryObject<Enchantment> NEKO_MIRROR = Enchantments.register("neko_mirror",()->new NekoMirror(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR,EquipmentSlot.CHEST));
     public static void register(IEventBus eventBus){Enchantments.register(eventBus);}
 }

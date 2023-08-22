@@ -4,7 +4,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 public class _AM {
@@ -55,9 +54,9 @@ public class _AM {
         return y / 100.0F;
     }
     private static float NumPLog(int k,int b){
-        return (float) (Math.log(k)/Math.log(2));
+        return (float) (Math.log(k)/Math.log(b));
     }
-    private static int log2Floor(int n){
+    public static int log2Floor(int n){
         assert n >= 1;
         int log = 0;
         if(n > 0xffff){
