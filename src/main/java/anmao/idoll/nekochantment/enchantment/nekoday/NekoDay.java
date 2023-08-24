@@ -17,6 +17,7 @@ public class NekoDay extends Enchantment {
         super(pRarity, pCategory, pApplicableSlots);
     }
 
+    /*
     @Override
     public float getDamageBonus(int level, MobType mobType, ItemStack enchantedItem) {
         if (Minecraft.getInstance().level != null) {
@@ -29,6 +30,8 @@ public class NekoDay extends Enchantment {
         }
         return 0;
     }
+
+     */
 
     @Override
     protected boolean checkCompatibility(Enchantment pOther) {

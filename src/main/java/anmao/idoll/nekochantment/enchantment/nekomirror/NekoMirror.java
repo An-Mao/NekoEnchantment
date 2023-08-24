@@ -20,4 +20,8 @@ public class NekoMirror extends Enchantment {
     public int getMaxLevel() {
         return 5;
     }
+    @Override
+    public boolean isTreasureOnly() {
+        return true;
+    }
 }

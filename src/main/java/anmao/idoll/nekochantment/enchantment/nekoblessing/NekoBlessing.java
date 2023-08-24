@@ -28,6 +28,10 @@ public class NekoBlessing extends Enchantment {
      */
 
     @Override
+    public boolean isTreasureOnly() {
+        return true;
+    }
+    @Override
     public boolean canEnchant(ItemStack pStack) {
         return pStack.getItem() instanceof ArmorItem || super.canEnchant(pStack);
     }
