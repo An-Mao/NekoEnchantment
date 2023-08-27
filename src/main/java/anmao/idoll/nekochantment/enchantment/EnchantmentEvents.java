@@ -13,6 +13,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.UUID;
+
 public class EnchantmentEvents {
     @Mod.EventBusSubscriber(modid = NekoEnchantment.MODID)
     public static class FEE{
@@ -24,6 +26,10 @@ public class EnchantmentEvents {
         private static final String TOOLTIPS_KILLS = "tooltips.nekoenchantment.kills";
         private static final String TOOLTIPS_SOULS = "tooltips.nekoenchantment.souls";
         private static final String TOOLTIPS_BLESSING = "tooltips.nekoenchantment.blessing";
+        private static final String[] TOOLTIPS_LOVE = {
+                "tooltips.nekoenchantment.lovey",
+                "tooltips.nekoenchantment.loven"
+        };
         @SubscribeEvent
         public static void onTooltip(ItemTooltipEvent event) {
             @NotNull ItemStack item = event.getItemStack();
@@ -31,9 +37,20 @@ public class EnchantmentEvents {
             int indexs = 1;
             int colo = 15;
             Player player = event.getEntity();
-            if (player != null) {
+            if (player != null && item.getTag() != null) {
+                if (item.getEnchantmentLevel(EnchantmentRegister.NEKO_LOVE.get()) > 0) {
+                    if (item.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
+                        UUID uuid = item.getOrCreateTag().getUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE);
+                        System.out.println("item:"+uuid +"]player:"+player.getUUID());
+                        if (uuid.equals(player.getUUID())) {
+                            event.getToolTip().add(indexs, _AM_Color.RainbowTextColor(Component.translatable(TOOLTIPS_LOVE[0]).getString(), player.level().getDayTime()));
+                        }else {
+                            event.getToolTip().add(indexs, Component.literal(Component.translatable(TOOLTIPS_LOVE[1]).getString()).withStyle(_AM.getColor(colo)));
+                        }
+                        indexs++;
+                    }
+                }
                 if (item.getEnchantmentLevel(EnchantmentRegister.NEKO_KING.get()) > 0) {
-                    if (item.getTag() != null) {
                         tmp = item.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_REFINE);
                         if (tmp < 200) {
                             if (tmp < 100 && tmp >= 50) {
@@ -55,11 +72,10 @@ public class EnchantmentEvents {
                             event.getToolTip().add(indexs, _AM_Color.RainbowTextColor(str.getString(), player.level().getDayTime()));
                         }
                         indexs++;
-                    }
+
 
                 }
                 if (item.getEnchantmentLevel(EnchantmentRegister.NEKO_EMPEROR.get()) > 0) {
-                    if (item.getTag() != null) {
                         tmp = item.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_KILL);
                         if (tmp < 1000) {
                             if (tmp < 700 && tmp >= 300) {
@@ -77,10 +93,9 @@ public class EnchantmentEvents {
                             event.getToolTip().add(indexs, _AM_Color.RainbowTextColor(str.getString(), player.level().getDayTime()));
                         }
                         indexs++;
-                    }
+
                 }
                 if (item.getEnchantmentLevel(EnchantmentRegister.NEKO_SOUL.get()) > 0) {
-                    if (item.getTag() != null) {
                         tmp = item.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_SOUL);
                         if (tmp < 10000) {
                             if (tmp < 6000 && tmp >= 3000) {
@@ -98,10 +113,9 @@ public class EnchantmentEvents {
                             event.getToolTip().add(indexs, _AM_Color.RainbowTextColor(str.getString(), player.level().getDayTime()));
                         }
                         indexs++;
-                    }
+
                 }
                 if (item.getEnchantmentLevel(EnchantmentRegister.NEKO_BLESSING.get()) > 0) {
-                    if (item.getTag() != null) {
                         tmp = item.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_BLESSING);
                         if (tmp < 1000) {
                             if (tmp < 300 && tmp >= 100) {
@@ -118,7 +132,7 @@ public class EnchantmentEvents {
                             MutableComponent str = Component.translatable(TOOLTIPS_BLESSING).append(" : ").append(String.valueOf(tmp));
                             event.getToolTip().add(indexs, _AM_Color.RainbowTextColor(str.getString(), player.level().getDayTime()));
                         }
-                    }
+
                 }
             }
         }

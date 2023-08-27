@@ -3,10 +3,13 @@ package anmao.idoll.nekochantment.enchantment;
 import anmao.idoll.nekochantment.NekoEnchantment;
 import anmao.idoll.nekochantment.enchantment.nekoblade.NekoBlade;
 import anmao.idoll.nekochantment.enchantment.nekoblessing.NekoBlessing;
+import anmao.idoll.nekochantment.enchantment.nekochop.NekoChop;
 import anmao.idoll.nekochantment.enchantment.nekoday.NekoDay;
 import anmao.idoll.nekochantment.enchantment.nekoemperor.NekoEmperor;
 import anmao.idoll.nekochantment.enchantment.nekogod.NekoGod;
 import anmao.idoll.nekochantment.enchantment.nekoking.NekoKing;
+import anmao.idoll.nekochantment.enchantment.nekolife.NekoLife;
+import anmao.idoll.nekochantment.enchantment.nekolove.NekoLove;
 import anmao.idoll.nekochantment.enchantment.nekomeow.NekoMeow;
 import anmao.idoll.nekochantment.enchantment.nekomirror.NekoMirror;
 import anmao.idoll.nekochantment.enchantment.nekonight.NekoNight;
@@ -29,9 +32,15 @@ public class EnchantmentRegister {
     public static RegistryObject<Enchantment> NEKO_EMPEROR = Enchantments.register("neko_emperor",()->new NekoEmperor(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
     public static RegistryObject<Enchantment> NEKO_DAY = Enchantments.register("neko_day",()->new NekoDay(Enchantment.Rarity.RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
     public static RegistryObject<Enchantment> NEKO_NIGHT = Enchantments.register("neko_night",()->new NekoNight(Enchantment.Rarity.RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
+    public static RegistryObject<Enchantment> NEKO_CHOP = Enchantments.register("neko_chop",()->new NekoChop(Enchantment.Rarity.RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
+    public static RegistryObject<Enchantment> NEKO_LOVE= Enchantments.register("neko_love",()->new NekoLove(Enchantment.Rarity.RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
+
+
+    // armor
     public static RegistryObject<Enchantment> NEKO_NINJA = Enchantments.register("neko_ninja",()->new NekoNinja(Enchantment.Rarity.RARE, EnchantmentCategory.ARMOR, EquipmentSlot.CHEST));
     public static RegistryObject<Enchantment> NEKO_SOUL = Enchantments.register("neko_soul",()->new NekoSoul(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR, EquipmentSlot.CHEST));
     public static RegistryObject<Enchantment> NEKO_BLESSING = Enchantments.register("neko_blessing",()->new NekoBlessing(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR, EquipmentSlot.FEET));
     public static RegistryObject<Enchantment> NEKO_MIRROR = Enchantments.register("neko_mirror",()->new NekoMirror(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR,EquipmentSlot.CHEST));
+    public static RegistryObject<Enchantment> NEKO_LIFE = Enchantments.register("neko_life",()->new NekoLife(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR,EquipmentSlot.CHEST));
     public static void register(IEventBus eventBus){Enchantments.register(eventBus);}
 }
