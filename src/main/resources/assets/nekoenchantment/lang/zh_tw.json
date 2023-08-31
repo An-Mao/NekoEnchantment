@@ -1,0 +1,40 @@
+{
+  "enchantment.nekoenchantment.neko_blade": "ฅ 貓刃 ฅ",
+  "enchantment.nekoenchantment.neko_blade.desc": "武器耐久度越低增加的傷害越高，最高1.15倍。",
+  "enchantment.nekoenchantment.neko_god": "ฅ 貓神 ฅ",
+  "enchantment.nekoenchantment.neko_god.desc": "極低的機率造成指令級傷害，機率受運氣影響。",
+  "enchantment.nekoenchantment.neko_meow": "ฅ 貓喵 ฅ",
+  "enchantment.nekoenchantment.neko_meow.desc": "攻擊時自身會發出貓叫。僅此而已。",
+  "enchantment.nekoenchantment.neko_king": "ฅ 貓王 ฅ",
+  "enchantment.nekoenchantment.neko_king.desc": "可以使用礦物強化武器，每20點強化，增加1點傷害。",
+  "enchantment.nekoenchantment.neko_emperor": "ฅ 貓皇 ฅ",
+  "enchantment.nekoenchantment.neko_emperor.desc": "會記錄擊殺數，每50擊殺，增加1點傷害。",
+  "enchantment.nekoenchantment.neko_day": "ฅ 貓晝 ฅ",
+  "enchantment.nekoenchantment.neko_day.desc": "白天增加傷害，夜晚降低傷害。",
+  "enchantment.nekoenchantment.neko_night": "ฅ 貓夜 ฅ",
+  "enchantment.nekoenchantment.neko_night.desc": "夜晚增加傷害，白天降低傷害。",
+  "enchantment.nekoenchantment.neko_chop": "ฅ 貓斬 ฅ",
+  "enchantment.nekoenchantment.neko_chop.desc": "有機率獲得生物頭顱",
+  "enchantment.nekoenchantment.neko_love": "ฅ 貓戀 ฅ",
+  "enchantment.nekoenchantment.neko_love.desc": "防丟",
+
+
+
+  "enchantment.nekoenchantment.neko_ninja": "ฅ 貓忍 ฅ",
+  "enchantment.nekoenchantment.neko_ninja.desc": "受到傷害時進入隱身，並提高傷害。",
+  "enchantment.nekoenchantment.neko_soul": "ฅ 貓魂 ฅ",
+  "enchantment.nekoenchantment.neko_soul.desc": "每次攻擊獲得靈魂，受傷時消耗200靈魂治癒自身10%的生命。",
+  "enchantment.nekoenchantment.neko_blessing": "ฅ 貓佑 ฅ",
+  "enchantment.nekoenchantment.neko_blessing.desc": "每繁殖一隻貓獲得一層護佑，貓死亡時減少兩層。受傷時消耗一層護佑來減少傷害，可疊加。",
+  "enchantment.nekoenchantment.neko_mirror": "ฅ 貓鏡 ฅ",
+  "enchantment.nekoenchantment.neko_mirror.desc": "受傷時有機率反彈傷害，並免疫此次傷害。",
+  "enchantment.nekoenchantment.neko_life": "ฅ 貓命 ฅ",
+  "enchantment.nekoenchantment.neko_life.desc": "有機率減免大於生命20%，且小於150%的傷害至20%。",
+
+  "tooltips.nekoenchantment.refine": "ฅ強化數ฅ",
+  "tooltips.nekoenchantment.kills": "ฅ擊殺數ฅ",
+  "tooltips.nekoenchantment.souls": "ฅ靈魂數ฅ",
+  "tooltips.nekoenchantment.blessing": "ฅ護佑數ฅ",
+  "tooltips.nekoenchantment.lovey": "ฅ屬於你ฅ",
+  "tooltips.nekoenchantment.loven": "ฅ不屬於你ฅ"
+}
