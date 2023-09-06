@@ -38,7 +38,7 @@ public class EnchantmentEvents {
             int colo = 15;
             Player player = event.getEntity();
             if (player != null && item.getTag() != null) {
-                if (item.getEnchantmentLevel(EnchantmentRegister.NEKO_LOVE.get()) > 0) {
+                if (item.getEnchantmentLevel(NE.ni_love) > 0) {
                     if (item.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
                         UUID uuid = item.getOrCreateTag().getUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE);
                         System.out.println("item:"+uuid +"]player:"+player.getUUID());
@@ -50,7 +50,7 @@ public class EnchantmentEvents {
                         indexs++;
                     }
                 }
-                if (item.getEnchantmentLevel(EnchantmentRegister.NEKO_KING.get()) > 0) {
+                if (item.getEnchantmentLevel(NE.ni_king) > 0) {
                         tmp = item.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_REFINE);
                         if (tmp < 200) {
                             if (tmp < 100 && tmp >= 50) {
@@ -75,7 +75,7 @@ public class EnchantmentEvents {
 
 
                 }
-                if (item.getEnchantmentLevel(EnchantmentRegister.NEKO_EMPEROR.get()) > 0) {
+                if (item.getEnchantmentLevel(NE.ni_emperor) > 0) {
                         tmp = item.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_KILL);
                         if (tmp < 1000) {
                             if (tmp < 700 && tmp >= 300) {
@@ -95,7 +95,7 @@ public class EnchantmentEvents {
                         indexs++;
 
                 }
-                if (item.getEnchantmentLevel(EnchantmentRegister.NEKO_SOUL.get()) > 0) {
+                if (item.getEnchantmentLevel(NE.na_soul) > 0) {
                         tmp = item.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_SOUL);
                         if (tmp < 10000) {
                             if (tmp < 6000 && tmp >= 3000) {
@@ -115,7 +115,7 @@ public class EnchantmentEvents {
                         indexs++;
 
                 }
-                if (item.getEnchantmentLevel(EnchantmentRegister.NEKO_BLESSING.get()) > 0) {
+                if (item.getEnchantmentLevel(NE.na_blessing) > 0) {
                         tmp = item.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_BLESSING);
                         if (tmp < 1000) {
                             if (tmp < 300 && tmp >= 100) {

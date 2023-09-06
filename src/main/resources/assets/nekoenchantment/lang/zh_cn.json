@@ -31,6 +31,24 @@
   "enchantment.nekoenchantment.neko_life": "ฅ 猫命 ฅ",
   "enchantment.nekoenchantment.neko_life.desc": "有概率减免大于生命20%，且小于150%的伤害至20%。",
 
+
+
+
+  "enchantment.nekoenchantment.e_adaptive": "☪:适应装甲",
+  "enchantment.nekoenchantment.e_natural": "☪:自然装甲",
+  "enchantment.nekoenchantment.e_red_lotus": "☪:红莲装甲",
+  "enchantment.nekoenchantment.e_stance": "☪:立场装甲",
+  "enchantment.nekoenchantment.e_warlord": "☪:战神装甲",
+
+  "enchantment.nekoenchantment.e_angel": "☪:天使之剑",
+  "enchantment.nekoenchantment.e_cross": "☪:十字架",
+  "enchantment.nekoenchantment.e_death_sickle": "☪:死神之镰",
+  "enchantment.nekoenchantment.e_gan_jiang": "☪:干将",
+  "enchantment.nekoenchantment.e_mo_ye": "☪:莫邪",
+  "enchantment.nekoenchantment.e_judgment": "☪:裁决之剑",
+  "enchantment.nekoenchantment.e_mahogany": "☪:桃木剑",
+  "enchantment.nekoenchantment.e_zen_stick": "☪:禅杖",
+
   "tooltips.nekoenchantment.refine": "ฅ强化数ฅ",
   "tooltips.nekoenchantment.kills": "ฅ击杀数ฅ",
   "tooltips.nekoenchantment.souls": "ฅ灵魂数ฅ",
