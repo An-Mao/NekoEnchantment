@@ -1,6 +1,7 @@
 package anmao.mc.ne.enchantment.zero.item.breakdefense;
 
 import anmao.mc.ne.am._AM;
+import anmao.mc.ne.config.C_E_O;
 import anmao.mc.ne.effect.Effects;
 import anmao.mc.ne.enchantment.zero.item.ZeroItemE;
 import net.minecraft.server.level.ServerPlayer;
@@ -19,7 +20,7 @@ public class BreakDefense extends ZeroItemE {
     public void doPostAttack(@NotNull LivingEntity pAttacker, @NotNull Entity pTarget, int pLevel) {
         if (pAttacker instanceof ServerPlayer){
             if (pTarget instanceof LivingEntity livingEntity) {
-                if (_AM.getRandomNumber(1,100) < pLevel * 12 ) {
+                if (_AM.getRandomNumber(1,100) < pLevel * C_E_O.ziBreakDefenseP) {
                     livingEntity.addEffect(BreakDefense);
                 }
             }

@@ -32,6 +32,14 @@ public class C_E_O
     private static final ForgeConfigSpec.IntValue ADAPTIVE_ARMOR_MIN_DAMAGE = BUILDER
             .comment("adaptive armor min damage")
             .defineInRange("adaptive_armor_min_damage", 3, 0, Integer.MAX_VALUE);
+
+
+    private static final ForgeConfigSpec.IntValue ZI_PURIFY_P = BUILDER
+            .comment("Purify Probability")
+            .defineInRange("purify_p", 5, 0, 100);
+    private static final ForgeConfigSpec.IntValue ZI_BREAK_DEFENSE_P = BUILDER
+            .comment("BreakDefense Probability")
+            .defineInRange("BreakDefense_p", 12, 0, 100);
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static int gangjiang_moye_sp;
@@ -41,6 +49,10 @@ public class C_E_O
     public static int adaptive_armor_span;
     public static int adaptive_armor_cooldown;
     public static int adaptive_armor_min_damage;
+
+
+    public static int ziBreakDefenseP;
+    public static int ziPurifyP;
 
     private static boolean validateItemName(final Object obj)
     {
@@ -56,5 +68,8 @@ public class C_E_O
         adaptive_armor_span = ADAPTIVE_ARMOR_SPAN.get();
         adaptive_armor_cooldown = ADAPTIVE_ARMOR_COOLDOWN.get();
         adaptive_armor_min_damage = ADAPTIVE_ARMOR_MIN_DAMAGE.get();
+
+        ziPurifyP = ZI_PURIFY_P.get();
+        ziBreakDefenseP = ZI_BREAK_DEFENSE_P.get();
     }
 }
