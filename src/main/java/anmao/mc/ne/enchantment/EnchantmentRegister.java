@@ -1,6 +1,7 @@
 package anmao.mc.ne.enchantment;
 
 import anmao.mc.ne.NE;
+import anmao.mc.ne.enchantment.curse.disease.CurseDisease;
 import anmao.mc.ne.enchantment.neko.armor.nekoblessing.NekoBlessing;
 import anmao.mc.ne.enchantment.neko.armor.nekolife.NekoLife;
 import anmao.mc.ne.enchantment.neko.armor.nekomirror.NekoMirror;
@@ -78,5 +79,8 @@ public class EnchantmentRegister {
     public static RegistryObject<Enchantment> Z_PURIFY = Enchantments.register("zi_purify", Purify::new);
     public static RegistryObject<Enchantment> Z_BREAK_DEFENSE = Enchantments.register("zi_break_defense", BreakDefense::new);
 
+
+
+    public static RegistryObject<Enchantment> CURSE_DISEASE = Enchantments.register("curse_disease", CurseDisease::new);
     public static void register(IEventBus eventBus){Enchantments.register(eventBus);}
 }

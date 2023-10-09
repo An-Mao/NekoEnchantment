@@ -68,6 +68,10 @@
   "enchantment.ne.zi_purify": "净化",
   "enchantment.ne.zi_break_defense": "破防",
 
+
+
+  "enchantment.ne.curse_disease": "☠ 疾病",
+
   "effect.ne.yan_ling": "言灵",
   "effect.ne.break_defense": "破防",
   "effect.ne.evil_creature": "业火",
@@ -76,6 +80,6 @@
   "tooltips.ne.kills": "ฅ击杀数ฅ",
   "tooltips.ne.souls": "ฅ灵魂数ฅ",
   "tooltips.ne.blessing": "ฅ护佑数ฅ",
-  "tooltips.ne.lovey": "ฅ属于你ฅ",
-  "tooltips.ne.loven": "ฅ不属于你ฅ"
+  "tooltips.ne.love_y": "ฅ属于你ฅ",
+  "tooltips.ne.love_n": "ฅ不属于你ฅ"
 }

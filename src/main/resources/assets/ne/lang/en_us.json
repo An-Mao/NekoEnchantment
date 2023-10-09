@@ -61,6 +61,10 @@
   "enchantment.ne.zi_purify": "Purify",
   "enchantment.ne.zi_break_defense": "Break Defense",
 
+
+  "enchantment.ne.curse_disease": "☠ Disease",
+
+
   "effect.ne.yan_ling": "Yan Ling",
   "effect.ne.break_defense": "Break Defense",
   "effect.ne.evil_creature": "Evil Creature",
@@ -69,6 +73,6 @@
   "tooltips.ne.kills": "ฅkillsฅ",
   "tooltips.ne.souls": "ฅsoulsฅ",
   "tooltips.ne.blessing": "ฅblessingฅ",
-  "tooltips.ne.lovey": "ฅBelong to youฅ",
-  "tooltips.ne.loven": "ฅNot yoursฅ"
+  "tooltips.ne.love_y": "ฅBelong to youฅ",
+  "tooltips.ne.love_n": "ฅNot yoursฅ"
 }

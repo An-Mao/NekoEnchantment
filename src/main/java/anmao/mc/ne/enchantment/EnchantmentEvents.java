@@ -22,13 +22,13 @@ public class EnchantmentEvents {
         private static final int[] KILLS_COLOR = {12,4};
         private static final int[] SOUL_COLOR = {7,8};
         private static final int[] BLESSING_COLOR = {13,5};
-        private static final String TOOLTIPS_REFINE = "tooltips.nekoenchantment.refine";
-        private static final String TOOLTIPS_KILLS = "tooltips.nekoenchantment.kills";
-        private static final String TOOLTIPS_SOULS = "tooltips.nekoenchantment.souls";
-        private static final String TOOLTIPS_BLESSING = "tooltips.nekoenchantment.blessing";
+        private static final String TOOLTIPS_REFINE = "tooltips.ne.refine";
+        private static final String TOOLTIPS_KILLS = "tooltips.ne.kills";
+        private static final String TOOLTIPS_SOULS = "tooltips.ne.souls";
+        private static final String TOOLTIPS_BLESSING = "tooltips.ne.blessing";
         private static final String[] TOOLTIPS_LOVE = {
-                "tooltips.nekoenchantment.lovey",
-                "tooltips.nekoenchantment.loven"
+                "tooltips.ne.love_y",
+                "tooltips.ne.love_n"
         };
         @SubscribeEvent
         public static void onTooltip(ItemTooltipEvent event) {
