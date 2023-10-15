@@ -59,10 +59,17 @@
   "enchantment.ne.z_confusion": "Confusion",
   "enchantment.ne.z_confusion.desc":"Attacked creatures treat other creatures nearest to the player as targets",
   "enchantment.ne.zi_purify": "Purify",
+  "enchantment.ne.zi_purify.desc": "clear entity data",
   "enchantment.ne.zi_break_defense": "Break Defense",
+  "enchantment.ne.zi_break_defense.desc": "Gives a defense-breaking effect",
+  "enchantment.ne.zi_bright": "Bright",
+  "enchantment.ne.zi_bright.desc": "Monsters avoid it when holding it.",
 
 
   "enchantment.ne.curse_disease": "☠ Disease",
+  "enchantment.ne.curse_disease.desc": "Gain random negative effects when attacking",
+  "enchantment.ne.corrode": "☠ Corrode",
+  "enchantment.ne.corrode.desc": "Attacks have a chance to lose half of their current durability",
 
 
   "effect.ne.yan_ling": "Yan Ling",

@@ -44,4 +44,5 @@ public class N_E_S extends EnchantmentRegister{
     public static Enchantment zi_confusion = Z_CONFUSION.get();
     public static Enchantment zi_purify = Z_PURIFY.get();
     public static Enchantment zi_break_defense = Z_BREAK_DEFENSE.get();
+    public static Enchantment zi_bright = Z_BRIGHT.get();
 }

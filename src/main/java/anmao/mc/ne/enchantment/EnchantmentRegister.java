@@ -31,6 +31,8 @@ import anmao.mc.ne.enchantment.spirit.sword.moye.MoYe;
 import anmao.mc.ne.enchantment.spirit.sword.zenstick.ZenStick;
 import anmao.mc.ne.enchantment.zero.item.breakdefense.BreakDefense;
 import anmao.mc.ne.enchantment.zero.item.confusion.Confusion;
+import anmao.mc.ne.enchantment.zero.item.bright.Bright;
+import anmao.mc.ne.enchantment.zero.item.corrode.Corrode;
 import anmao.mc.ne.enchantment.zero.item.purify.Purify;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -78,9 +80,11 @@ public class EnchantmentRegister {
     public static RegistryObject<Enchantment> Z_CONFUSION = Enchantments.register("z_confusion", Confusion::new);
     public static RegistryObject<Enchantment> Z_PURIFY = Enchantments.register("zi_purify", Purify::new);
     public static RegistryObject<Enchantment> Z_BREAK_DEFENSE = Enchantments.register("zi_break_defense", BreakDefense::new);
+    public static RegistryObject<Enchantment> Z_BRIGHT = Enchantments.register("zi_bright", Bright::new);
 
 
 
     public static RegistryObject<Enchantment> CURSE_DISEASE = Enchantments.register("curse_disease", CurseDisease::new);
+    public static RegistryObject<Enchantment> CORRODE = Enchantments.register("corrode", Corrode::new);
     public static void register(IEventBus eventBus){Enchantments.register(eventBus);}
 }

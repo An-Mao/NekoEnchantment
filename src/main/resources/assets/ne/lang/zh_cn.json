@@ -66,11 +66,18 @@
   "enchantment.ne.z_confusion": "混乱",
   "enchantment.ne.z_confusion.desc":"被攻击生物会将玩家最近的其他生物视为目标",
   "enchantment.ne.zi_purify": "净化",
+  "enchantment.ne.zi_purify.desc":"实体数据清除",
   "enchantment.ne.zi_break_defense": "破防",
+  "enchantment.ne.zi_break_defense.desc": "给予目标【破防】效果",
+  "enchantment.ne.zi_bright": "光明",
+  "enchantment.ne.zi_bright.desc": "持有时，怪物会躲避",
 
 
 
   "enchantment.ne.curse_disease": "☠ 疾病",
+  "enchantment.ne.curse_disease.desc": "攻击时获得随机负面效果",
+  "enchantment.ne.corrode": "☠ 侵蚀",
+  "enchantment.ne.corrode.desc": "攻击时有概率损失当前一半耐久",
 
   "effect.ne.yan_ling": "言灵",
   "effect.ne.break_defense": "破防",
