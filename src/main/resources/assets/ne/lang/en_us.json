@@ -59,7 +59,19 @@
   "enchantment.ne.z_confusion": "Confusion",
   "enchantment.ne.z_confusion.desc":"Attacked creatures treat other creatures nearest to the player as targets",
   "enchantment.ne.zi_purify": "Purify",
+  "enchantment.ne.zi_purify.desc": "clear entity data",
   "enchantment.ne.zi_break_defense": "Break Defense",
+  "enchantment.ne.zi_break_defense.desc": "Gives a defense-breaking effect",
+  "enchantment.ne.zi_bright": "Bright",
+  "enchantment.ne.zi_bright.desc": "Monsters avoid it when holding it.",
+  "enchantment.ne.zi_alone": "Alone",
+  "enchantment.ne.zi_alone.desc": "Only this enchantment provides a damage bonus that varies with the number of times it is used.",
+
+  "enchantment.ne.curse_disease": "☠ Disease",
+  "enchantment.ne.curse_disease.desc": "Gain random negative effects when attacking",
+  "enchantment.ne.corrode": "☠ Corrode",
+  "enchantment.ne.corrode.desc": "Attacks have a chance to lose half of their current durability",
+
 
   "effect.ne.yan_ling": "Yan Ling",
   "effect.ne.break_defense": "Break Defense",
@@ -69,6 +81,6 @@
   "tooltips.ne.kills": "ฅkillsฅ",
   "tooltips.ne.souls": "ฅsoulsฅ",
   "tooltips.ne.blessing": "ฅblessingฅ",
-  "tooltips.ne.lovey": "ฅBelong to youฅ",
-  "tooltips.ne.loven": "ฅNot yoursฅ"
+  "tooltips.ne.love_y": "ฅBelong to youฅ",
+  "tooltips.ne.love_n": "ฅNot yoursฅ"
 }
