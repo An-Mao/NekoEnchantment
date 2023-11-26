@@ -1,6 +1,7 @@
 package anmao.mc.ne.enchantment;
 
 import anmao.mc.ne.NE;
+import anmao.mc.ne.enchantment.curse.corrode.Corrode;
 import anmao.mc.ne.enchantment.curse.disease.CurseDisease;
 import anmao.mc.ne.enchantment.neko.armor.nekoblessing.NekoBlessing;
 import anmao.mc.ne.enchantment.neko.armor.nekolife.NekoLife;
@@ -32,12 +33,12 @@ import anmao.mc.ne.enchantment.spirit.sword.zenstick.ZenStick;
 import anmao.mc.ne.enchantment.zero.item.alone.Alone;
 import anmao.mc.ne.enchantment.zero.item.breakdefense.BreakDefense;
 import anmao.mc.ne.enchantment.zero.item.bright.Bright;
-import anmao.mc.ne.enchantment.zero.item.indestructible.Indestructible;
 import anmao.mc.ne.enchantment.zero.item.confusion.Confusion;
-import anmao.mc.ne.enchantment.zero.item.corrode.Corrode;
 import anmao.mc.ne.enchantment.zero.item.deathproclamation.DeathProclamation;
 import anmao.mc.ne.enchantment.zero.item.fetters.Fetters;
+import anmao.mc.ne.enchantment.zero.item.indestructible.Indestructible;
 import anmao.mc.ne.enchantment.zero.item.purify.Purify;
+import anmao.mc.ne.enchantment.zero.item.unbreakable.Unbreakable;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -90,6 +91,7 @@ public class EnchantmentRegister {
     public static RegistryObject<Enchantment> Z_DP = Enchantments.register("zi_dp", DeathProclamation::new);
     public static RegistryObject<Enchantment> Z_FETTERS = Enchantments.register("zi_fetters", Fetters::new);
     public static RegistryObject<Enchantment> Z_INDESTRUCTIBLE = Enchantments.register("zi_indestructible", Indestructible::new);
+    public static RegistryObject<Enchantment> Z_UNBREAKABLE = Enchantments.register("zi_unbreakable", Unbreakable::new);
 
 
     public static RegistryObject<Enchantment> CURSE_DISEASE = Enchantments.register("curse_disease", CurseDisease::new);

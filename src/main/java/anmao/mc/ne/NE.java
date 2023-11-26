@@ -14,16 +14,26 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class NE
 {
     public static final String MOD_ID = "ne";
+    public static Boolean ShowDesc;
     public NE()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-
         MinecraftForge.EVENT_BUS.register(this);
-
         Effects.register(modEventBus);
         EnchantmentRegister.register(modEventBus);
-
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, C_E_O.SPEC);
+        if (C_E_O.showDesc) {
+            ShowDesc = isModLoaded("net.darkhax.enchdesc");
+        }else {
+            ShowDesc = true;
+        }
+    }
+    public static boolean isModLoaded(String modId) {
+        try {
+            Class.forName(modId);
+            return true;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
     }
 }

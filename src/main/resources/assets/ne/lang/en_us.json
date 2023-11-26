@@ -72,6 +72,8 @@
   "enchantment.ne.zi_fetters.desc": "Fetters",
   "enchantment.ne.zi_indestructible": "Indestructible",
   "enchantment.ne.zi_indestructible.desc": "Prevent destruction when in a dropped state.",
+  "enchantment.ne.zi_unbreakable": "Unbreakable",
+  "enchantment.ne.zi_unbreakable.desc": "Use NETHERITE BLOCK at the Anvil to strengthen it five times to unlock it.",
 
   "enchantment.ne.curse_disease": "§c☠ Disease",
   "enchantment.ne.curse_disease.desc": "Gain random negative effects when attacking",

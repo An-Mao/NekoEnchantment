@@ -1,5 +1,6 @@
 package anmao.mc.ne.enchantment.neko.armor.nekoninja;
 
+import anmao.mc.ne.enchantment.EnchantmentCore;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -9,7 +10,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import org.jetbrains.annotations.NotNull;
 
-public class NekoNinja extends Enchantment {
+public class NekoNinja extends EnchantmentCore {
     public NekoNinja(Rarity pRarity, EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
         super(pRarity, pCategory, pApplicableSlots);
     }

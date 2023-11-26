@@ -48,6 +48,7 @@ public class N_E_S extends EnchantmentRegister{
     public static Enchantment zi_alone = Z_ALONE.get();
     public static Enchantment zi_fetters = Z_FETTERS.get();
     public static Enchantment zi_indestructible = Z_INDESTRUCTIBLE.get();
+    public static Enchantment zi_unbreakable = Z_UNBREAKABLE.get();
 
     public static Enchantment zi_dp = Z_DP.get();
 }

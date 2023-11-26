@@ -12,7 +12,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class C_E_O
 {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
-
+    private static final ForgeConfigSpec.BooleanValue SHOWDESC = BUILDER
+            .comment("showDesc")
+            .define("showDesc", false);
     private static final ForgeConfigSpec.IntValue GANJIANG_MOYE_SP = BUILDER
             .comment("GanJiang/MoYe Spike Probability")
             .defineInRange("ganjiang_moye_sp", 5, 0, 100);
@@ -50,6 +52,8 @@ public class C_E_O
     public static int adaptive_armor_cooldown;
     public static int adaptive_armor_min_damage;
 
+    public static boolean showDesc;
+
 
     public static int ziBreakDefenseP;
     public static int ziPurifyP;
@@ -62,6 +66,7 @@ public class C_E_O
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
     {
+        showDesc = SHOWDESC.get();
         gangjiang_moye_sp = GANJIANG_MOYE_SP.get();
         village_add_damage = VILLAGE_ADD_DAMAGE.get();
         adaptive_armor_rr = ADAPTIVE_ARMOR_RR.get().floatValue();
