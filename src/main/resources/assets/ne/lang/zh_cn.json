@@ -73,6 +73,10 @@
   "enchantment.ne.zi_bright.desc": "持有时，怪物会躲避",
   "enchantment.ne.zi_alone": "孤独",
   "enchantment.ne.zi_alone.desc": "只有此附魔时，提供伤害加成，伤害随使用次数变化。",
+  "enchantment.ne.zi_dp": "死亡宣告",
+  "enchantment.ne.zi_dp.desc": "生命倒计时",
+  "enchantment.ne.zi_fetters": "束缚",
+  "enchantment.ne.zi_fetters.desc": "束缚",
 
 
 
@@ -80,6 +84,8 @@
   "enchantment.ne.curse_disease.desc": "攻击时获得随机负面效果",
   "enchantment.ne.corrode": "☠ 侵蚀",
   "enchantment.ne.corrode.desc": "攻击时有概率损失当前一半耐久",
+
+  "cn.ne.death_pro": "[☠]",
 
   "effect.ne.yan_ling": "言灵",
   "effect.ne.break_defense": "破防",

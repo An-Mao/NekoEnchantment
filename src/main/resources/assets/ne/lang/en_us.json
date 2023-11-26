@@ -66,11 +66,19 @@
   "enchantment.ne.zi_bright.desc": "Monsters avoid it when holding it.",
   "enchantment.ne.zi_alone": "Alone",
   "enchantment.ne.zi_alone.desc": "Only this enchantment provides a damage bonus that varies with the number of times it is used.",
+  "enchantment.ne.zi_dp": "Death Proclamation",
+  "enchantment.ne.zi_dp.desc": "Countdown to Life",
+  "enchantment.ne.zi_fetters": "Fetters",
+  "enchantment.ne.zi_fetters.desc": "Fetters",
 
   "enchantment.ne.curse_disease": "☠ Disease",
   "enchantment.ne.curse_disease.desc": "Gain random negative effects when attacking",
   "enchantment.ne.corrode": "☠ Corrode",
   "enchantment.ne.corrode.desc": "Attacks have a chance to lose half of their current durability",
+
+  "cn.ne.death_pro": "[☠]",
+
+
 
 
   "effect.ne.yan_ling": "Yan Ling",

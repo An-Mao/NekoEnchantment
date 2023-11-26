@@ -32,8 +32,11 @@ import anmao.mc.ne.enchantment.spirit.sword.zenstick.ZenStick;
 import anmao.mc.ne.enchantment.zero.item.alone.Alone;
 import anmao.mc.ne.enchantment.zero.item.breakdefense.BreakDefense;
 import anmao.mc.ne.enchantment.zero.item.bright.Bright;
+import anmao.mc.ne.enchantment.zero.item.indestructible.Indestructible;
 import anmao.mc.ne.enchantment.zero.item.confusion.Confusion;
 import anmao.mc.ne.enchantment.zero.item.corrode.Corrode;
+import anmao.mc.ne.enchantment.zero.item.deathproclamation.DeathProclamation;
+import anmao.mc.ne.enchantment.zero.item.fetters.Fetters;
 import anmao.mc.ne.enchantment.zero.item.purify.Purify;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -84,8 +87,13 @@ public class EnchantmentRegister {
     public static RegistryObject<Enchantment> Z_BRIGHT = Enchantments.register("zi_bright", Bright::new);
     public static RegistryObject<Enchantment> Z_ALONE = Enchantments.register("zi_alone", Alone::new);
 
+    public static RegistryObject<Enchantment> Z_DP = Enchantments.register("zi_dp", DeathProclamation::new);
+    public static RegistryObject<Enchantment> Z_FETTERS = Enchantments.register("zi_fetters", Fetters::new);
+    public static RegistryObject<Enchantment> Z_INDESTRUCTIBLE = Enchantments.register("zi_indestructible", Indestructible::new);
+
 
     public static RegistryObject<Enchantment> CURSE_DISEASE = Enchantments.register("curse_disease", CurseDisease::new);
     public static RegistryObject<Enchantment> CORRODE = Enchantments.register("corrode", Corrode::new);
+
     public static void register(IEventBus eventBus){Enchantments.register(eventBus);}
 }
