@@ -41,7 +41,7 @@ public class EnchantmentEvents {
                 if (item.getEnchantmentLevel(N_E_S.ni_love) > 0) {
                     if (item.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
                         UUID uuid = item.getOrCreateTag().getUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE);
-                        System.out.println("item:"+uuid +"]player:"+player.getUUID());
+                        //System.out.println("item:"+uuid +"]player:"+player.getUUID());
                         if (uuid.equals(player.getUUID())) {
                             event.getToolTip().add(indexs, _AM_Color.RainbowTextColor(Component.translatable(TOOLTIPS_LOVE[0]).getString(), player.level().getDayTime()));
                         }else {

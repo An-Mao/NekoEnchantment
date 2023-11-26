@@ -3,15 +3,23 @@ package anmao.mc.ne.enchantment.neko.item.nekolove;
 import anmao.mc.ne.NE;
 import anmao.mc.ne.am._AM_Constant;
 import anmao.mc.ne.enchantment.N_E_S;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.event.AnvilUpdateEvent;
+import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
@@ -59,8 +67,45 @@ public class NekoLoveEvent {
                             if (server != null) {
                                 ServerPlayer serverPlayer = server.getPlayerList().getPlayer(uuid);
                                 if (serverPlayer != null) {
-                                    serverPlayer.getInventory().placeItemBackInInventory(oitem);
-                                    event.setCanceled(true);
+                                    Inventory playerInventory = serverPlayer.getInventory();
+                                    NonNullList<ItemStack> items = playerInventory.items;
+                                    boolean isIn = false;
+                                    for (ItemStack itemStack:items){
+                                        if (itemStack.isEmpty()){
+                                            isIn = true;
+                                            serverPlayer.getInventory().placeItemBackInInventory(oitem);
+                                            event.setCanceled(true);
+                                            break;
+                                        }
+                                    }
+                                    if (!isIn){
+                                        ItemStack handItem = serverPlayer.getMainHandItem();
+                                        if (handItem.getEnchantmentLevel(N_E_S.ni_love) > 0){
+                                            handItem = serverPlayer.getOffhandItem();
+                                            if (handItem.getEnchantmentLevel(N_E_S.ni_love) > 0) {
+                                                item.teleportTo(serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ());
+                                            }else {
+                                                Direction playerFacing = serverPlayer.getDirection();
+                                                BlockPos playerPos = serverPlayer.blockPosition();
+                                                BlockPos dropPos = playerPos.relative(playerFacing,2);
+                                                ItemEntity itemEntity = new ItemEntity(serverPlayer.level(), dropPos.getX() + 0.5, dropPos.getY(), dropPos.getZ() + 0.5, handItem.copy());
+                                                itemEntity.setDeltaMovement(0, 0.1, 0);
+                                                serverPlayer.level().addFreshEntity(itemEntity);
+                                                serverPlayer.setItemInHand(InteractionHand.OFF_HAND,oitem);
+                                                event.setCanceled(true);
+                                            }
+                                        }else {
+                                            Direction playerFacing = serverPlayer.getDirection();
+                                            BlockPos playerPos = serverPlayer.blockPosition();
+                                            BlockPos dropPos = playerPos.relative(playerFacing,2);
+                                            ItemEntity itemEntity = new ItemEntity(serverPlayer.level(), dropPos.getX() + 0.5, dropPos.getY(), dropPos.getZ() + 0.5, handItem.copy());
+                                            itemEntity.setDeltaMovement(0, 0.1, 0);
+                                            serverPlayer.level().addFreshEntity(itemEntity);
+                                            serverPlayer.setItemInHand(InteractionHand.MAIN_HAND,oitem);
+                                            //serverPlayer.getInventory().placeItemBackInInventory(oitem);
+                                            event.setCanceled(true);
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -109,9 +154,39 @@ public class NekoLoveEvent {
                 if (ditem.getEnchantmentLevel(N_E_S.ni_love) > 0){
                     if (ditem.getTag() != null && ditem.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
                         UUID uuid = ditem.getTag().getUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE);
-                        if (event.getPlayer().getUUID().equals(uuid)) {
-                            event.getPlayer().getInventory().placeItemBackInInventory(ditem);
+                        Player player = event.getPlayer();
+                        if (player.getUUID().equals(uuid)) {
+                            player.getInventory().placeItemBackInInventory(ditem);
                             event.setCanceled(true);
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void onTick(EntityEvent event){
+            if (event.getEntity() instanceof ItemEntity item && !item.getItem().isEmpty()  && !item.level().isClientSide){
+                ItemStack oitem = item.getItem();
+                if (oitem.getEnchantmentLevel(N_E_S.ni_love) > 0){
+                    if (oitem.getTag() != null) {
+                        if (oitem.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
+                            UUID uuid = oitem.getTag().getUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE);
+                            MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
+                            if (server != null) {
+                                ServerPlayer serverPlayer = server.getPlayerList().getPlayer(uuid);
+                                if (serverPlayer != null) {
+                                    Inventory playerInventory = serverPlayer.getInventory();
+                                    NonNullList<ItemStack> items = playerInventory.items;
+                                    for (ItemStack itemStack:items){
+                                        if (itemStack.isEmpty()){
+                                            serverPlayer.getInventory().placeItemBackInInventory(oitem);
+                                            item.remove(Entity.RemovalReason.KILLED);
+                                            break;
+                                        }
+                                    }
+
+                                }
+                            }
                         }
                     }
                 }
