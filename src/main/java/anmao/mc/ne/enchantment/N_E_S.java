@@ -51,4 +51,9 @@ public class N_E_S extends EnchantmentRegister{
     public static Enchantment zi_unbreakable = Z_UNBREAKABLE.get();
 
     public static Enchantment zi_dp = Z_DP.get();
+
+
+
+
+    public static Enchantment duality = DUALITY.get();
 }

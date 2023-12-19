@@ -26,7 +26,7 @@ public class Judgment extends SSE {
                     pAttacker.getMainHandItem().getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE);
 
             if (!attack.isEmpty()) {
-                double damage = _AM_Item.getAdddamage(attack);
+                double damage = _AM_Item.getAddDamage(attack);
                 if (mob.getHealth() <= damage * 2) {
                     mob.kill();
                 }

@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = NE.MOD_ID)
 public class indestructibleEvent {
     @SubscribeEvent
-    public void onItemExpire(ItemExpireEvent event) {
+    public static void onItemExpire(ItemExpireEvent event) {
         ItemEntity itemEntity = event.getEntity();
         if (itemEntity != null && itemEntity.getItem().getEnchantmentLevel(N_E_S.zi_indestructible) > 0) {
             event.setCanceled(true);

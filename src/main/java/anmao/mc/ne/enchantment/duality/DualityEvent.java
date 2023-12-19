@@ -1,0 +1,89 @@
+package anmao.mc.ne.enchantment.duality;
+
+import anmao.mc.ne.NE;
+import anmao.mc.ne.enchantment.N_E_S;
+import net.minecraft.data.loot.LootTableSubProvider;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.LootBonusEnchantment;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraftforge.event.LootTableLoadEvent;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+
+import java.util.HashMap;
+import java.util.UUID;
+
+@Mod.EventBusSubscriber(modid = NE.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+public class DualityEvent {
+    public static final int maxDuality = 40;
+    public static final int minDuality = -40;
+    public static int ticks = 0;
+    public static HashMap<UUID,Boolean> playerData = new HashMap<>();
+    @SubscribeEvent
+    public static void onBaby(BabyEntitySpawnEvent event){
+        if (event.getChild() != null && event.getCausedByPlayer() instanceof ServerPlayer player){
+            ItemStack item = player.getMainHandItem();
+            if (item.getEnchantmentLevel(N_E_S.duality) > 0){
+                if (item.getTag() != null) {
+                    int d = item.getTag().getInt("duality");
+                    item.getTag().putInt("duality",Math.min(maxDuality,d+1));
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public static void onDeath(LivingDeathEvent event){
+        if (event.getSource().getEntity() instanceof ServerPlayer player){
+            ItemStack item = player.getMainHandItem();
+            if (item.getEnchantmentLevel(N_E_S.duality) > 0){
+                if (item.getTag() != null) {
+                    int d = item.getTag().getInt("duality");
+                    item.getTag().putInt("duality",Math.max(minDuality,d-1));
+                }
+            }
+        }
+    }
+
+    public static void onLivingDrops(LivingDropsEvent event) {
+        if (event.getSource().getEntity() instanceof ServerPlayer serverPlayer){
+            ItemStack item = serverPlayer.getMainHandItem();
+            if (item.getEnchantmentLevel(N_E_S.duality) > 0){
+                for (ItemEntity drop : event.getDrops()) {
+                    ItemStack di = drop.getItem();
+                    di.setCount(di.getCount() * 2);
+                }
+            }
+        }
+    }
+    @SubscribeEvent
+    public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+        ticks ++;
+        if (event.player instanceof ServerPlayer serverPlayer && event.phase == TickEvent.Phase.END && ticks > 600){
+            ticks = 0;
+            ItemStack item = serverPlayer.getMainHandItem();
+            if (item.getEnchantmentLevel(N_E_S.duality) > 0){
+                boolean sub = playerData.getOrDefault(serverPlayer.getUUID(), true);
+                if (item.getTag() != null) {
+                    int d = item.getTag().getInt("duality");
+                    if (sub){
+                        d++;
+                    }else {
+                        d--;
+                    }
+                    if (d >= maxDuality || d <= minDuality){
+                        playerData.put(serverPlayer.getUUID(),!sub);
+                    }
+                    item.getTag().putInt("duality",d);
+                }
+            }
+        }
+    }
+}

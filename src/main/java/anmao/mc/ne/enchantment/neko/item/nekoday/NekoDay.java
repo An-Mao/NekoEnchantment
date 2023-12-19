@@ -1,6 +1,7 @@
 package anmao.mc.ne.enchantment.neko.item.nekoday;
 
-import anmao.mc.ne.enchantment.neko.NekoEI;
+import anmao.mc.ne.enchantment.neko.NekoEC;
+import anmao.mc.ne.enchantment.neko.item.NekoEI;
 import anmao.mc.ne.enchantment.neko.item.nekonight.NekoNight;
 import net.minecraft.world.item.enchantment.Enchantment;
 import org.jetbrains.annotations.NotNull;

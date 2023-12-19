@@ -140,7 +140,7 @@ public class NekoLoveEvent {
                 ItemStack oitem = event.getItem();
                 if (oitem.getTag() != null && oitem.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
                     UUID uuid = oitem.getTag().getUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE);
-                    if (e.getUUID().equals(uuid)){
+                    if (!e.getUUID().equals(uuid)){
                         e.hurt(e.damageSources().fellOutOfWorld(),e.getMaxHealth() * 0.2F);
                     }
                 }

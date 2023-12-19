@@ -3,8 +3,9 @@
   "minVersion": "0.8",
   "package": "anmao.mc.ne.mixin",
   "compatibilityLevel": "JAVA_17",
-  "client": [
-    "ItemEntityMixin"
-  ],
-  "refmap": "mixins.tts.refmap.json"
+  "refmap": "mixins.ne.refmap.json",
+  "mixins": [
+    "ItemEntityMixin",
+    "EnchantmentHelperMixin"
+  ]
 }

@@ -26,7 +26,7 @@ public class Cross extends SSE {
                 Collection<AttributeModifier> attack =
                         serverPlayer.getMainHandItem().getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE);
                 if (!attack.isEmpty()){
-                    double damage = _AM_Item.getAdddamage(attack) * 100;
+                    double damage = _AM_Item.getAddDamage(attack) * 100;
                     pTarget.hurt(pAttacker.damageSources().fellOutOfWorld(), (float) damage);
                 }
             }

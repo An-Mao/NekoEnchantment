@@ -1,6 +1,7 @@
 package anmao.mc.ne.enchantment.neko.item.nekolove;
 
-import anmao.mc.ne.enchantment.neko.NekoEI;
+import anmao.mc.ne.enchantment.neko.NekoEC;
+import anmao.mc.ne.enchantment.neko.item.NekoEI;
 import net.minecraft.world.item.ItemStack;
 
 public class NekoLove extends NekoEI {

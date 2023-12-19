@@ -1,8 +1,11 @@
 package anmao.mc.ne.enchantment;
 
 import anmao.mc.ne.NE;
+import anmao.mc.ne.enchantment.blood.coagulation.Coagulation;
+import anmao.mc.ne.enchantment.blood.vampirism.Vampirism;
 import anmao.mc.ne.enchantment.curse.corrode.Corrode;
 import anmao.mc.ne.enchantment.curse.disease.CurseDisease;
+import anmao.mc.ne.enchantment.duality.Duality;
 import anmao.mc.ne.enchantment.neko.armor.nekoblessing.NekoBlessing;
 import anmao.mc.ne.enchantment.neko.armor.nekolife.NekoLife;
 import anmao.mc.ne.enchantment.neko.armor.nekomirror.NekoMirror;
@@ -69,16 +72,26 @@ public class EnchantmentRegister {
 
 
     // armor
-    public static RegistryObject<Enchantment> NEKO_NINJA = Enchantments.register("neko_ninja",()->new NekoNinja(Enchantment.Rarity.RARE, EnchantmentCategory.ARMOR, EquipmentSlot.CHEST));
-    public static RegistryObject<Enchantment> NEKO_SOUL = Enchantments.register("neko_soul",()->new NekoSoul(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR, EquipmentSlot.CHEST));
-    public static RegistryObject<Enchantment> NEKO_BLESSING = Enchantments.register("neko_blessing",()->new NekoBlessing(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR, EquipmentSlot.FEET));
-    public static RegistryObject<Enchantment> NEKO_MIRROR = Enchantments.register("neko_mirror",()->new NekoMirror(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR,EquipmentSlot.CHEST));
-    public static RegistryObject<Enchantment> NEKO_LIFE = Enchantments.register("neko_life",()->new NekoLife(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR,EquipmentSlot.CHEST));
-    public static RegistryObject<Enchantment> E_ADAPTIVE = Enchantments.register("e_adaptive", Adaptive::new);
-    public static RegistryObject<Enchantment> E_NATURAL = Enchantments.register("e_natural", Natural::new);
-    public static RegistryObject<Enchantment> E_REDLOTUS = Enchantments.register("e_red_lotus", RedLotus::new);
-    public static RegistryObject<Enchantment> E_STANCE = Enchantments.register("e_stance", Stance::new);
-    public static RegistryObject<Enchantment> E_WARLORD = Enchantments.register("e_warlord", Warlord::new);
+    public static RegistryObject<Enchantment> NEKO_NINJA =
+            Enchantments.register("neko_ninja", NekoNinja::new);
+    public static RegistryObject<Enchantment> NEKO_SOUL =
+            Enchantments.register("neko_soul", NekoSoul::new);
+    public static RegistryObject<Enchantment> NEKO_BLESSING =
+            Enchantments.register("neko_blessing", NekoBlessing::new);
+    public static RegistryObject<Enchantment> NEKO_MIRROR =
+            Enchantments.register("neko_mirror", NekoMirror::new);
+    public static RegistryObject<Enchantment> NEKO_LIFE =
+            Enchantments.register("neko_life", NekoLife::new);
+    public static RegistryObject<Enchantment> E_ADAPTIVE =
+            Enchantments.register("e_adaptive", Adaptive::new);
+    public static RegistryObject<Enchantment> E_NATURAL =
+            Enchantments.register("e_natural", Natural::new);
+    public static RegistryObject<Enchantment> E_REDLOTUS =
+            Enchantments.register("e_red_lotus", RedLotus::new);
+    public static RegistryObject<Enchantment> E_STANCE =
+            Enchantments.register("e_stance", Stance::new);
+    public static RegistryObject<Enchantment> E_WARLORD =
+            Enchantments.register("e_warlord", Warlord::new);
 
 
     //item
@@ -94,8 +107,13 @@ public class EnchantmentRegister {
     public static RegistryObject<Enchantment> Z_UNBREAKABLE = Enchantments.register("zi_unbreakable", Unbreakable::new);
 
 
+    public static RegistryObject<Enchantment> B_DRINK_BLOOD = Enchantments.register("b_vampirism", Vampirism::new);
+    public static RegistryObject<Enchantment> B_COAGULATION = Enchantments.register("b_coagulation", Coagulation::new);
+
     public static RegistryObject<Enchantment> CURSE_DISEASE = Enchantments.register("curse_disease", CurseDisease::new);
     public static RegistryObject<Enchantment> CORRODE = Enchantments.register("corrode", Corrode::new);
 
+
+    public static RegistryObject<Enchantment> DUALITY = Enchantments.register("duality", Duality::new);
     public static void register(IEventBus eventBus){Enchantments.register(eventBus);}
 }

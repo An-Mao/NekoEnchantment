@@ -30,7 +30,7 @@ public class Angel extends SSE {
                 if (pTarget instanceof Monster){
                     damage = 1.0;
                 }
-                damage *= _AM_Item.getAdddamage(attack);
+                damage *= _AM_Item.getAddDamage(attack);
                 pTarget.hurt(pAttacker.damageSources().magic(),(float) damage);
             }
         }

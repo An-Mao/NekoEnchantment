@@ -1,7 +1,8 @@
 package anmao.mc.ne.enchantment.neko.item.nekogod;
 
 import anmao.mc.ne.am._AM;
-import anmao.mc.ne.enchantment.neko.NekoEI;
+import anmao.mc.ne.enchantment.neko.NekoEC;
+import anmao.mc.ne.enchantment.neko.item.NekoEI;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;

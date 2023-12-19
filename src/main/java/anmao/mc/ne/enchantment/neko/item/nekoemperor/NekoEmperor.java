@@ -1,7 +1,8 @@
 package anmao.mc.ne.enchantment.neko.item.nekoemperor;
 
 import anmao.mc.ne.am._AM_Constant;
-import anmao.mc.ne.enchantment.neko.NekoEI;
+import anmao.mc.ne.enchantment.neko.NekoEC;
+import anmao.mc.ne.enchantment.neko.item.NekoEI;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.ItemStack;
 

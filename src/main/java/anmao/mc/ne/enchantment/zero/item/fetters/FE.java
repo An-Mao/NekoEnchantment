@@ -14,7 +14,8 @@ public class FE {
         LivingEntity le = event.getEntity();
         CompoundTag dat = le.getPersistentData();
         long gt = le.level().getGameTime();
-        if (gt - dat.getLong("Fetters") < 1200){
+        //System.out.println(gt);
+        if (dat.getLong("Fetters") >0 && gt - dat.getLong("Fetters") < 1200){
             le.teleportTo(dat.getDouble("Fx"),dat.getDouble("Fy"),dat.getDouble("Fz"));
         }
     }

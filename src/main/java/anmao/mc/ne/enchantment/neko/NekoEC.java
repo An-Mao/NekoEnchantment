@@ -1,13 +1,13 @@
 package anmao.mc.ne.enchantment.neko;
 
 import anmao.mc.ne.enchantment.EnchantmentCore;
+import net.minecraft.ChatFormatting;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
-public class NekoEI extends EnchantmentCore {
-    protected NekoEI(Rarity pRarity) {
-        super(pRarity, EnchantmentCategory.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+public class NekoEC extends EnchantmentCore {
+    protected NekoEC(Rarity pRarity,EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
+        super(ChatFormatting.LIGHT_PURPLE,pRarity, pCategory, pApplicableSlots);
     }
     @Override
     public int getMaxLevel() {

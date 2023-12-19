@@ -2,6 +2,7 @@ package anmao.mc.ne.enchantment.neko.armor.nekosoul;
 
 import anmao.mc.ne.am._AM_Constant;
 import anmao.mc.ne.enchantment.EnchantmentCore;
+import anmao.mc.ne.enchantment.neko.armor.NekoEA;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -13,9 +14,9 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import org.jetbrains.annotations.NotNull;
 
-public class NekoSoul extends EnchantmentCore {
-    public NekoSoul(Rarity pRarity, EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
-        super(pRarity, pCategory, pApplicableSlots);
+public class NekoSoul extends NekoEA {
+    public NekoSoul() {
+        super(Rarity.VERY_RARE);
     }
 
 
