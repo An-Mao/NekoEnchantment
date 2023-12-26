@@ -89,6 +89,10 @@
 
   "enchantment.ne.duality": "Duality",
   "enchantment.ne.duality.desc": "G:Up Loot,B:Up Atk.",
+  "enchantment.ne.the_world": "The World",
+  "enchantment.ne.the_world.desc": "Time Stop!",
+  "enchantment.ne.myriad_phenomena": "Myriad Phenomena",
+  "enchantment.ne.myriad_phenomena.desc": "Myriad Phenomena",
 
   "cn.ne.death_pro": "[☠]",
 
@@ -104,5 +108,7 @@
   "tooltips.ne.souls": "ฅsoulsฅ",
   "tooltips.ne.blessing": "ฅblessingฅ",
   "tooltips.ne.love_y": "ฅBelong to youฅ",
-  "tooltips.ne.love_n": "ฅNot yoursฅ"
+  "tooltips.ne.love_n": "ฅNot yoursฅ",
+  "tooltips.ne.duality.g": "GOOD",
+  "tooltips.ne.duality.b": "BAD"
 }

@@ -20,10 +20,11 @@ public class EnchantmentHelperMixin {
             if (item.getTag() != null) {
                 a = item.getTag().getInt("duality");
                 if (a > 0){
-                    a /= 10;
+                    a /= 5;
+                    looting += a;
                 }
             }
         }
-        i.setReturnValue(looting + a);
+        i.setReturnValue(looting);
     }
 }

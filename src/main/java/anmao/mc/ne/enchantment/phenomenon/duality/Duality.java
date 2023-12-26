@@ -1,8 +1,9 @@
-package anmao.mc.ne.enchantment.duality;
+package anmao.mc.ne.enchantment.phenomenon.duality;
 
 import anmao.mc.ne.am._AM_Color;
 import anmao.mc.ne.am._AM_Item;
 import anmao.mc.ne.enchantment.EnchantmentCore;
+import anmao.mc.ne.enchantment.phenomenon.PhenomenonEnchantment;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -12,10 +13,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import org.jetbrains.annotations.NotNull;
 
-public class Duality extends EnchantmentCore {
+public class Duality extends PhenomenonEnchantment {
     public Duality() {
-        super(Rarity.VERY_RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND);
+        super(EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND);
     }
+
 
     @Override
     public int getMaxLevel() {
@@ -26,7 +28,7 @@ public class Duality extends EnchantmentCore {
         if (enchantedItem.getTag() != null){
             float duality = enchantedItem.getTag().getInt("duality");
             if (duality < 0) {
-                duality = (float) (_AM_Item.getItemDamage(enchantedItem) * duality / 10);
+                duality = (float) (_AM_Item.getItemDamage(enchantedItem) * -duality / 10);
                 return duality;
             }
         }
@@ -36,10 +38,5 @@ public class Duality extends EnchantmentCore {
     @Override
     public void doPostAttack(@NotNull LivingEntity pAttacker, @NotNull Entity pTarget, int pLevel) {
         super.doPostAttack(pAttacker, pTarget, pLevel);
-    }
-
-    @Override
-    public Component getFullname(int pLevel) {
-        return _AM_Color.RainbowTextColor(Component.translatable(this.getDescriptionId()).getString(),System.currentTimeMillis()/500);
     }
 }

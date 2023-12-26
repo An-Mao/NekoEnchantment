@@ -6,6 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
 
 import java.util.Collection;
 
@@ -39,5 +40,9 @@ public class _AM_Item {
         return RandomSource.createNewThreadLocalInstance().nextInt(min,max);
         //Random random = new Random();
         //return random.nextInt(max) % (max - min + 1) + min;
+    }
+
+    public static boolean hasEnchant(ItemStack itemStack, Enchantment enchantment){
+        return itemStack.getEnchantmentLevel(enchantment) > 0;
     }
 }

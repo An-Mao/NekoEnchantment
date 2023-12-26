@@ -4,6 +4,7 @@ import anmao.mc.ne.NE;
 import anmao.mc.ne.am._AM;
 import anmao.mc.ne.am._AM_Color;
 import anmao.mc.ne.am._AM_Constant;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.player.Player;
@@ -26,6 +27,8 @@ public class EnchantmentEvents {
         private static final String TOOLTIPS_KILLS = "tooltips.ne.kills";
         private static final String TOOLTIPS_SOULS = "tooltips.ne.souls";
         private static final String TOOLTIPS_BLESSING = "tooltips.ne.blessing";
+        private static final String TOOLTIPS_DUALITY_G = "tooltips.ne.duality.g";
+        private static final String TOOLTIPS_DUALITY_B = "tooltips.ne.duality.b";
         private static final String[] TOOLTIPS_LOVE = {
                 "tooltips.ne.love_y",
                 "tooltips.ne.love_n"
@@ -38,6 +41,20 @@ public class EnchantmentEvents {
             int colo = 15;
             Player player = event.getEntity();
             if (player != null && item.getTag() != null) {
+                if (item.getEnchantmentLevel(N_E_S.duality) > 0){
+                    float a = item.getTag().getFloat("duality");
+                    String s;
+                    ChatFormatting cr;
+                    if (a < 0){
+                        s = TOOLTIPS_DUALITY_B;
+                        cr = ChatFormatting.RED;
+                    }else {
+                        s = TOOLTIPS_DUALITY_G;
+                        cr = ChatFormatting.GOLD;
+                    }
+                    event.getToolTip().add(indexs, Component.translatable(s).append(" : ").append(String.valueOf(a)).withStyle(cr));
+                    indexs++;
+                }
                 if (item.getEnchantmentLevel(N_E_S.ni_love) > 0) {
                     if (item.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
                         UUID uuid = item.getOrCreateTag().getUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE);

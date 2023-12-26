@@ -95,6 +95,10 @@
 
   "enchantment.ne.duality": "善恶",
   "enchantment.ne.duality.desc": "善者何其利,恶者何其力",
+  "enchantment.ne.the_world": "The World",
+  "enchantment.ne.the_world.desc": "时间停止!",
+  "enchantment.ne.myriad_phenomena": "森罗万象",
+  "enchantment.ne.myriad_phenomena.desc": "森罗万象",
 
   "cn.ne.death_pro": "[☠]",
 
@@ -107,5 +111,7 @@
   "tooltips.ne.souls": "ฅ灵魂数ฅ",
   "tooltips.ne.blessing": "ฅ护佑数ฅ",
   "tooltips.ne.love_y": "ฅ属于你ฅ",
-  "tooltips.ne.love_n": "ฅ不属于你ฅ"
+  "tooltips.ne.love_n": "ฅ不属于你ฅ",
+  "tooltips.ne.duality.g": "善",
+  "tooltips.ne.duality.b": "恶"
 }

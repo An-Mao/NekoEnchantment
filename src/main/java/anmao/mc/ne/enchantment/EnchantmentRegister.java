@@ -5,7 +5,8 @@ import anmao.mc.ne.enchantment.blood.coagulation.Coagulation;
 import anmao.mc.ne.enchantment.blood.vampirism.Vampirism;
 import anmao.mc.ne.enchantment.curse.corrode.Corrode;
 import anmao.mc.ne.enchantment.curse.disease.CurseDisease;
-import anmao.mc.ne.enchantment.duality.Duality;
+import anmao.mc.ne.enchantment.phenomenon.duality.Duality;
+import anmao.mc.ne.enchantment.phenomenon.myriadphenomena.MyriadPhenomena;
 import anmao.mc.ne.enchantment.neko.armor.nekoblessing.NekoBlessing;
 import anmao.mc.ne.enchantment.neko.armor.nekolife.NekoLife;
 import anmao.mc.ne.enchantment.neko.armor.nekomirror.NekoMirror;
@@ -42,9 +43,8 @@ import anmao.mc.ne.enchantment.zero.item.fetters.Fetters;
 import anmao.mc.ne.enchantment.zero.item.indestructible.Indestructible;
 import anmao.mc.ne.enchantment.zero.item.purify.Purify;
 import anmao.mc.ne.enchantment.zero.item.unbreakable.Unbreakable;
-import net.minecraft.world.entity.EquipmentSlot;
+import anmao.mc.ne.enchantment.phenomenon.theworld.TheWorld;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -115,5 +115,7 @@ public class EnchantmentRegister {
 
 
     public static RegistryObject<Enchantment> DUALITY = Enchantments.register("duality", Duality::new);
+    public static RegistryObject<Enchantment> THE_WORLD = Enchantments.register("the_world", TheWorld::new);
+    public static RegistryObject<Enchantment> MYRIAD_PHENOMENA = Enchantments.register("myriad_phenomena", MyriadPhenomena::new);
     public static void register(IEventBus eventBus){Enchantments.register(eventBus);}
 }

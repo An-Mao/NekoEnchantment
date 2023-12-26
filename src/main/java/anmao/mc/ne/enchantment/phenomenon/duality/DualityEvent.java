@@ -1,4 +1,4 @@
-package anmao.mc.ne.enchantment.duality;
+package anmao.mc.ne.enchantment.phenomenon.duality;
 
 import anmao.mc.ne.NE;
 import anmao.mc.ne.enchantment.N_E_S;

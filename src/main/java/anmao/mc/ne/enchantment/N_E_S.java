@@ -56,4 +56,6 @@ public class N_E_S extends EnchantmentRegister{
 
 
     public static Enchantment duality = DUALITY.get();
+    public static Enchantment the_world = THE_WORLD.get();
+    public static Enchantment myriad_phenomena = MYRIAD_PHENOMENA.get();
 }
