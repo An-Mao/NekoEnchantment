@@ -12,7 +12,7 @@ public class PhenomenonEnchantment extends EnchantmentCore {
     }
     @Override
     public Component getFullname(int pLevel) {
-        return _AM_Color.RainbowTextColor(Component.translatable(this.getDescriptionId()).getString(),System.currentTimeMillis()/300);
+        return _AM_Color.RainbowTextColor(Component.translatable(this.getDescriptionId()).getString(),System.currentTimeMillis()/50);
     }
     @Override
     public boolean isTreasureOnly() {
