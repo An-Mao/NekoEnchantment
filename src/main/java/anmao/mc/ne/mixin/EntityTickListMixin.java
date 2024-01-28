@@ -1,9 +1,13 @@
 package anmao.mc.ne.mixin;
 
+import anmao.mc.ne.NE;
+import anmao.mc.ne.config.C_E_O;
+import anmao.mc.ne.other.Log;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.entity.EntityTickList;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 import javax.annotation.Nullable;
@@ -17,6 +21,11 @@ public abstract class EntityTickListMixin {
     @Shadow
     @Nullable
     private Int2ObjectMap<Entity> iterated;
+    /**
+     * @author AnMao
+     * @reason The World Enchantment
+     */
+    @Overwrite
     public void forEach(Consumer<Entity> pEntity) {
         if (this.iterated != null) {
             throw new UnsupportedOperationException("Only one concurrent iteration supported");
@@ -26,8 +35,8 @@ public abstract class EntityTickListMixin {
             try {
                 for(Entity entity : this.active.values()) {
                     long theWorld = entity.getPersistentData().getLong("theWorld");
-                    if (theWorld > 0 && entity.level().getGameTime() - theWorld < 1000) {
-                        //System.out.println("the World:" + theWorld);
+                    //Log.LOG.debug("the World:" + theWorld);
+                    if (theWorld > 0 && entity.level().getGameTime() - theWorld < C_E_O.theWorldStopTick) {
                         continue;
                     }
                     pEntity.accept(entity);

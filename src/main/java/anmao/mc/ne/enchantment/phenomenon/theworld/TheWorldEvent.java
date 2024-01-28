@@ -4,6 +4,7 @@ import anmao.mc.ne.NE;
 import anmao.mc.ne.am._AM_Item;
 import anmao.mc.ne.enchantment.N_E_S;
 import anmao.mc.ne.mixin.EntityTickListMixin;
+import anmao.mc.ne.other.Log;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -43,6 +44,7 @@ public class TheWorldEvent {
     public static void setTheWorldTime(Entity e){
         CompoundTag nbt = e.getPersistentData();
         long gameTime = e.level().getGameTime();
+        //Log.LOG.debug("the World:" + gameTime);
         nbt.putLong("theWorld", gameTime);
     }
 }

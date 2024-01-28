@@ -15,6 +15,7 @@ public class NE
 {
     public static final String MOD_ID = "ne";
     public static Boolean ShowDesc;
+
     public NE()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

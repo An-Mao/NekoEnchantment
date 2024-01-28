@@ -42,6 +42,10 @@ public class C_E_O
     private static final ForgeConfigSpec.IntValue ZI_BREAK_DEFENSE_P = BUILDER
             .comment("BreakDefense Probability")
             .defineInRange("BreakDefense_p", 12, 0, 100);
+
+    private static final ForgeConfigSpec.IntValue THE_WORLD_STOP_TICK = BUILDER
+            .comment("The world stop tick")
+            .defineInRange("TheWorldStopTick", 300, 0, 1000000);
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static int gangjiang_moye_sp;
@@ -57,6 +61,7 @@ public class C_E_O
 
     public static int ziBreakDefenseP;
     public static int ziPurifyP;
+    public static int theWorldStopTick;
 
     private static boolean validateItemName(final Object obj)
     {
@@ -76,5 +81,6 @@ public class C_E_O
 
         ziPurifyP = ZI_PURIFY_P.get();
         ziBreakDefenseP = ZI_BREAK_DEFENSE_P.get();
+        theWorldStopTick = THE_WORLD_STOP_TICK.get();
     }
 }
