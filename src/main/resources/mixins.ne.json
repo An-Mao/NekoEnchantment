@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "anmao.mc.ne.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.ne.refmap.json",
+  "mixins": [
+    "ItemEntityMixin",
+    "EnchantmentHelperMixin",
+    "EntityTickListMixin"
+  ]
+}
