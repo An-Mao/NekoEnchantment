@@ -1,7 +1,9 @@
 package anmao.mc.ne.enchantment.zero.item.bright;
 
 import anmao.mc.ne.NE;
-import anmao.mc.ne.enchantment.N_E_S;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
@@ -18,8 +20,8 @@ import java.util.List;
 public class BrightEvent {
     @SubscribeEvent
     public static void onMobTick(TickEvent.PlayerTickEvent event){
-        if (event.player instanceof ServerPlayer serverPlayer){
-            if (serverPlayer.getMainHandItem().getEnchantmentLevel(N_E_S.zi_bright) > 0) {
+        if (Bright.ENABLE && event.player instanceof ServerPlayer serverPlayer){
+            if (serverPlayer.getMainHandItem().getEnchantmentLevel(NekoEnchantments.zi_bright) > 0) {
                 List<Monster> monsters = serverPlayer.level().getEntitiesOfClass(Monster.class, serverPlayer.getBoundingBox().inflate(16));
                 for (Monster monster : monsters) {
                     PathNavigation pn = monster.getNavigation();

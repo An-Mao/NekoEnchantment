@@ -1,5 +1,7 @@
 package anmao.mc.ne.enchantment.zero.item.confusion;
 
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.zero.item.ZeroItemE;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -11,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class Confusion extends ZeroItemE {
+    private final float radius = EnchantmentsConfig.INSTANCE.getValue(EnchantmentRegister.Z_CONFUSION,"radius");
     public Confusion() {
         super(Enchantment.Rarity.VERY_RARE);
     }
@@ -18,7 +21,7 @@ public class Confusion extends ZeroItemE {
     @Override
     public void doPostAttack(@NotNull LivingEntity pAttacker, @NotNull Entity pTarget, int pLevel) {
             if (pAttacker instanceof ServerPlayer && pTarget instanceof Mob mob){
-                List<Entity> e = mob.level().getEntities(mob, mob.getBoundingBox().inflate(30));
+                List<Entity> e = mob.level().getEntities(mob, mob.getBoundingBox().inflate(radius));
                 Mob tar = null;
                 double d =-1 , td ;
                 for (Entity te : e ){

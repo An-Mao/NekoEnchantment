@@ -2,7 +2,9 @@ package anmao.mc.ne.enchantment.zero.item.unbreakable;
 
 import anmao.mc.ne.NE;
 import anmao.mc.ne.am._AM_Constant;
-import anmao.mc.ne.enchantment.N_E_S;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -15,7 +17,7 @@ import net.minecraftforge.fml.common.Mod;
 public class UE {
     @SubscribeEvent
     public static void onAnvil(AnvilUpdateEvent anvilUpdateEvent) {
-        if (!anvilUpdateEvent.getPlayer().level().isClientSide && anvilUpdateEvent.getLeft().getEnchantmentLevel(N_E_S.zi_unbreakable) > 0 ){
+        if (Unbreakable.ENABLE && !anvilUpdateEvent.getPlayer().level().isClientSide && anvilUpdateEvent.getLeft().getEnchantmentLevel(NekoEnchantments.zi_unbreakable) > 0 ){
             if (anvilUpdateEvent.getLeft().getTag() != null && anvilUpdateEvent.getLeft().getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_UNBREAKABLE) >= 5){
                 return;
             }

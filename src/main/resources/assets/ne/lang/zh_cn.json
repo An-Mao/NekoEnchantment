@@ -81,6 +81,10 @@
   "enchantment.ne.zi_indestructible.desc": "防止掉落物形态时被摧毁。",
   "enchantment.ne.zi_unbreakable": "不可破坏",
   "enchantment.ne.zi_unbreakable.desc": "在铁砧使用下届合金块强化五次解锁",
+  "enchantment.ne.rain_of_arrows": "箭雨",
+  "enchantment.ne.rain_of_arrows.desc": "生成箭雨",
+  "enchantment.ne.tori_no_uta": "鸟之诗",
+  "enchantment.ne.tori_no_uta.desc": "提高箭矢速度",
 
 
   "enchantment.ne.b_vampirism": "饮血",

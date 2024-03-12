@@ -2,7 +2,9 @@ package anmao.mc.ne.enchantment.neko.item.nekolove;
 
 import anmao.mc.ne.NE;
 import anmao.mc.ne.am._AM_Constant;
-import anmao.mc.ne.enchantment.N_E_S;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
@@ -57,9 +59,9 @@ public class NekoLoveEvent {
     public static class NLE{
         @SubscribeEvent
         public static void onSpawn(EntityJoinLevelEvent event){
-            if (event.getEntity() instanceof ItemEntity item && !item.level().isClientSide){
+            if (NekoLove.ENABLE && event.getEntity() instanceof ItemEntity item && !item.level().isClientSide){
                 ItemStack oitem = item.getItem();
-                if (oitem.getEnchantmentLevel(N_E_S.ni_love) > 0){
+                if (oitem.getEnchantmentLevel(NekoEnchantments.ni_love) > 0){
                     if (oitem.getTag() != null) {
                         if (oitem.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
                             UUID uuid = oitem.getTag().getUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE);
@@ -80,9 +82,9 @@ public class NekoLoveEvent {
                                     }
                                     if (!isIn){
                                         ItemStack handItem = serverPlayer.getMainHandItem();
-                                        if (handItem.getEnchantmentLevel(N_E_S.ni_love) > 0){
+                                        if (handItem.getEnchantmentLevel(NekoEnchantments.ni_love) > 0){
                                             handItem = serverPlayer.getOffhandItem();
-                                            if (handItem.getEnchantmentLevel(N_E_S.ni_love) > 0) {
+                                            if (handItem.getEnchantmentLevel(NekoEnchantments.ni_love) > 0) {
                                                 item.teleportTo(serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ());
                                             }else {
                                                 Direction playerFacing = serverPlayer.getDirection();
@@ -115,7 +117,7 @@ public class NekoLoveEvent {
         }
         @SubscribeEvent
         public static void onAnvil(AnvilUpdateEvent anvilUpdateEvent) {
-            if (!anvilUpdateEvent.getPlayer().level().isClientSide && anvilUpdateEvent.getLeft().getEnchantmentLevel(N_E_S.ni_love) > 0 ){
+            if (NekoLove.ENABLE && !anvilUpdateEvent.getPlayer().level().isClientSide && anvilUpdateEvent.getLeft().getEnchantmentLevel(NekoEnchantments.ni_love) > 0 ){
                 if (anvilUpdateEvent.getLeft().getTag() != null && anvilUpdateEvent.getLeft().getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)){
                     return;
                 }
@@ -135,7 +137,7 @@ public class NekoLoveEvent {
         }
         @SubscribeEvent
         public static void onItemUse(LivingEntityUseItemEvent.Start event){
-            if (!event.getEntity().level().isClientSide){
+            if (NekoLove.ENABLE && !event.getEntity().level().isClientSide){
                 LivingEntity e = event.getEntity();
                 ItemStack oitem = event.getItem();
                 if (oitem.getTag() != null && oitem.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
@@ -149,9 +151,9 @@ public class NekoLoveEvent {
         @SubscribeEvent
         public static void onToss(ItemTossEvent event) {
             ItemEntity entity = event.getEntity();
-            if (!entity.level().isClientSide){
+            if (NekoLove.ENABLE && !entity.level().isClientSide){
                 ItemStack ditem = entity.getItem();
-                if (ditem.getEnchantmentLevel(N_E_S.ni_love) > 0){
+                if (ditem.getEnchantmentLevel(NekoEnchantments.ni_love) > 0){
                     if (ditem.getTag() != null && ditem.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
                         UUID uuid = ditem.getTag().getUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE);
                         Player player = event.getPlayer();
@@ -167,7 +169,7 @@ public class NekoLoveEvent {
         public static void onTick(EntityEvent event){
             if (event.getEntity() instanceof ItemEntity item && !item.getItem().isEmpty()  && !item.level().isClientSide){
                 ItemStack oitem = item.getItem();
-                if (oitem.getEnchantmentLevel(N_E_S.ni_love) > 0){
+                if (oitem.getEnchantmentLevel(NekoEnchantments.ni_love) > 0){
                     if (oitem.getTag() != null) {
                         if (oitem.getTag().hasUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE)) {
                             UUID uuid = oitem.getTag().getUUID(_AM_Constant.ENCHANTMENT_KEY_LOVE);

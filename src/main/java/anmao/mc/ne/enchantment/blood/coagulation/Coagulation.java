@@ -1,11 +1,14 @@
 package anmao.mc.ne.enchantment.blood.coagulation;
 
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.blood.BloodEnchantment;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 
 public class Coagulation extends BloodEnchantment {
+    public static final boolean ENABLE = EnchantmentsConfig.INSTANCE.isEnable(EnchantmentRegister.B_COAGULATION);
     public Coagulation() {
         super(Rarity.VERY_RARE);
     }

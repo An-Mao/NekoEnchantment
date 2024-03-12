@@ -1,10 +1,13 @@
 package anmao.mc.ne.enchantment.neko.armor.nekoblessing;
 
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.neko.armor.NekoEA;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 
 public class NekoBlessing extends NekoEA {
+    public static final boolean ENABLE = EnchantmentsConfig.INSTANCE.isEnable(EnchantmentRegister.NEKO_BLESSING);
     public NekoBlessing() {
         super(Rarity.VERY_RARE);
     }

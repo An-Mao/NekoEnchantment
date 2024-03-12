@@ -1,6 +1,8 @@
 package anmao.mc.ne.enchantment.spirit.sword.judgment;
 
-import anmao.mc.ne.am._AM_Item;
+import anmao.mc.amlib.attribute.AttributeHelper;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.spirit.sword.SSE;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -14,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 
 public class Judgment extends SSE {
-
+    private final float quota = EnchantmentsConfig.INSTANCE.getValue(EnchantmentRegister.E_JUDGMENT,"quota");
     public Judgment() {
         super(Enchantment.Rarity.VERY_RARE);
     }
@@ -26,8 +28,8 @@ public class Judgment extends SSE {
                     pAttacker.getMainHandItem().getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE);
 
             if (!attack.isEmpty()) {
-                double damage = _AM_Item.getAddDamage(attack);
-                if (mob.getHealth() <= damage * 2) {
+                double damage = AttributeHelper.getAttributeModifierValue(attack);
+                if (mob.getHealth() <= damage * quota) {
                     mob.kill();
                 }
             }

@@ -6,8 +6,8 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
 public class BloodEnchantment extends EnchantmentCore {
-    protected BloodEnchantment(Rarity pRarity) {
-        super(ChatFormatting.DARK_RED,pRarity,EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND);
+    protected BloodEnchantment( Rarity pRarity) {
+        super( ChatFormatting.DARK_RED,pRarity,EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND);
     }
     @Override
     public boolean isTreasureOnly() {

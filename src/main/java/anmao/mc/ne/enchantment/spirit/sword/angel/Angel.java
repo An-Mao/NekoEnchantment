@@ -1,6 +1,6 @@
 package anmao.mc.ne.enchantment.spirit.sword.angel;
 
-import anmao.mc.ne.am._AM_Item;
+import anmao.mc.amlib.attribute.AttributeHelper;
 import anmao.mc.ne.enchantment.spirit.sword.SSE;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -30,7 +30,7 @@ public class Angel extends SSE {
                 if (pTarget instanceof Monster){
                     damage = 1.0;
                 }
-                damage *= _AM_Item.getAddDamage(attack);
+                damage *= AttributeHelper.getAttributeModifierValue(attack);
                 pTarget.hurt(pAttacker.damageSources().magic(),(float) damage);
             }
         }

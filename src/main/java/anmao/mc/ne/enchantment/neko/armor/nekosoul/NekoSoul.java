@@ -1,6 +1,8 @@
 package anmao.mc.ne.enchantment.neko.armor.nekosoul;
 
 import anmao.mc.ne.am._AM_Constant;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.neko.armor.NekoEA;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -11,6 +13,9 @@ import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 
 public class NekoSoul extends NekoEA {
+    public static final boolean ENABLE = EnchantmentsConfig.INSTANCE.isEnable(EnchantmentRegister.NEKO_SOUL);
+    private final float consume = EnchantmentsConfig.INSTANCE.getValue(EnchantmentRegister.NEKO_SOUL,"consume");
+    private final float quota = EnchantmentsConfig.INSTANCE.getValue(EnchantmentRegister.NEKO_SOUL,"quota");
     public NekoSoul() {
         super(Rarity.VERY_RARE);
     }
@@ -44,9 +49,9 @@ public class NekoSoul extends NekoEA {
                 if (mitem.getItem() != Items.AIR) {
                     if (mitem.getTag() != null) {
                         int souls = mitem.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_SOUL);
-                        if (souls >= 200) {
-                            souls -= 200;
-                            serverPlayer.heal(serverPlayer.getMaxHealth() * 0.1F);
+                        if (souls >= consume) {
+                            souls -= (int) consume;
+                            serverPlayer.heal(serverPlayer.getMaxHealth() * quota);
                             mitem.getTag().putInt(_AM_Constant.ENCHANTMENT_KEY_SOUL, souls);
                         }
                     }

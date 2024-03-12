@@ -1,10 +1,13 @@
 package anmao.mc.ne.enchantment.phenomenon.duality;
 
 import anmao.mc.ne.NE;
-import anmao.mc.ne.enchantment.N_E_S;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.levelgen.feature.IcebergFeature;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -23,9 +26,9 @@ public class DualityEvent {
     public static HashMap<UUID,Boolean> playerData = new HashMap<>();
     @SubscribeEvent
     public static void onBaby(BabyEntitySpawnEvent event){
-        if (event.getChild() != null && event.getCausedByPlayer() instanceof ServerPlayer player){
+        if (Duality.ENABLE && event.getChild() != null && event.getCausedByPlayer() instanceof ServerPlayer player){
             ItemStack item = player.getMainHandItem();
-            if (item.getEnchantmentLevel(N_E_S.duality) > 0){
+            if (item.getEnchantmentLevel(NekoEnchantments.duality) > 0){
                 if (item.getTag() != null) {
                     int d = item.getTag().getInt("duality");
                     item.getTag().putInt("duality",Math.min(maxDuality,d+1));
@@ -35,9 +38,9 @@ public class DualityEvent {
     }
     @SubscribeEvent
     public static void onDeath(LivingDeathEvent event){
-        if (event.getSource().getEntity() instanceof ServerPlayer player){
+        if (Duality.ENABLE && event.getSource().getEntity() instanceof ServerPlayer player){
             ItemStack item = player.getMainHandItem();
-            if (item.getEnchantmentLevel(N_E_S.duality) > 0){
+            if (item.getEnchantmentLevel(NekoEnchantments.duality) > 0){
                 if (item.getTag() != null) {
                     int d = item.getTag().getInt("duality");
                     item.getTag().putInt("duality",Math.max(minDuality,d-1));
@@ -49,7 +52,7 @@ public class DualityEvent {
     public static void onLivingDrops(LivingDropsEvent event) {
         if (event.getSource().getEntity() instanceof ServerPlayer serverPlayer){
             ItemStack item = serverPlayer.getMainHandItem();
-            if (item.getEnchantmentLevel(N_E_S.duality) > 0){
+            if (item.getEnchantmentLevel(NekoEnchantments.duality) > 0){
                 for (ItemEntity drop : event.getDrops()) {
                     ItemStack di = drop.getItem();
                     di.setCount(di.getCount() * 2);
@@ -59,23 +62,25 @@ public class DualityEvent {
     }
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        ticks ++;
-        if (event.player instanceof ServerPlayer serverPlayer && event.phase == TickEvent.Phase.END && ticks > 600){
-            ticks = 0;
-            ItemStack item = serverPlayer.getMainHandItem();
-            if (item.getEnchantmentLevel(N_E_S.duality) > 0){
-                boolean sub = playerData.getOrDefault(serverPlayer.getUUID(), true);
-                if (item.getTag() != null) {
-                    int d = item.getTag().getInt("duality");
-                    if (sub){
-                        d++;
-                    }else {
-                        d--;
+        if (Duality.ENABLE) {
+            ticks++;
+            if (event.player instanceof ServerPlayer serverPlayer && event.phase == TickEvent.Phase.END && ticks > 600) {
+                ticks = 0;
+                ItemStack item = serverPlayer.getMainHandItem();
+                if (item.getEnchantmentLevel(NekoEnchantments.duality) > 0) {
+                    boolean sub = playerData.getOrDefault(serverPlayer.getUUID(), true);
+                    if (item.getTag() != null) {
+                        int d = item.getTag().getInt("duality");
+                        if (sub) {
+                            d++;
+                        } else {
+                            d--;
+                        }
+                        if (d >= maxDuality || d <= minDuality) {
+                            playerData.put(serverPlayer.getUUID(), !sub);
+                        }
+                        item.getTag().putInt("duality", d);
                     }
-                    if (d >= maxDuality || d <= minDuality){
-                        playerData.put(serverPlayer.getUUID(),!sub);
-                    }
-                    item.getTag().putInt("duality",d);
                 }
             }
         }

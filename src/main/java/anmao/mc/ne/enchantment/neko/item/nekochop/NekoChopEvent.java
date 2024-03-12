@@ -2,7 +2,9 @@ package anmao.mc.ne.enchantment.neko.item.nekochop;
 
 import anmao.mc.ne.NE;
 import anmao.mc.ne.am._AM;
-import anmao.mc.ne.enchantment.N_E_S;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
@@ -30,11 +32,11 @@ public class NekoChopEvent{
     public static class NCE{
         @SubscribeEvent
         public static void onDeath(LivingDeathEvent event){
-            if (event.getSource().getEntity() instanceof ServerPlayer player){
+            if (NekoChop.ENABLE && event.getSource().getEntity() instanceof ServerPlayer player){
                 Entity de = event.getEntity();
                 if (de != null) {
                     int a = getA(de);
-                    int lvl = player.getMainHandItem().getEnchantmentLevel(N_E_S.ni_chop);
+                    int lvl = player.getMainHandItem().getEnchantmentLevel(NekoEnchantments.ni_chop);
                     if (lvl > 0) {
                         if (lvl * 15 > _AM.getRandomNumber(1, 100)) {
                             if (a > -1 && a < 6){de.spawnAtLocation(MOB_HEAD[a]);}

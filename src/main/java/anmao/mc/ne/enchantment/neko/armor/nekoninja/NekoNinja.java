@@ -1,5 +1,7 @@
 package anmao.mc.ne.enchantment.neko.armor.nekoninja;
 
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.neko.armor.NekoEA;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -8,6 +10,7 @@ import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 
 public class NekoNinja extends NekoEA {
+    private final int maxLevel = EnchantmentsConfig.INSTANCE.getMaxLevel(EnchantmentRegister.NEKO_NINJA);
     public NekoNinja() {
         super(Rarity.RARE);
     }
@@ -23,6 +26,6 @@ public class NekoNinja extends NekoEA {
 
     @Override
     public int getMaxLevel() {
-        return 3;
+        return maxLevel;
     }
 }

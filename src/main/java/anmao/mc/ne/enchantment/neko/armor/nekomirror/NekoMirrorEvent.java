@@ -2,7 +2,9 @@ package anmao.mc.ne.enchantment.neko.armor.nekomirror;
 
 import anmao.mc.ne.NE;
 import anmao.mc.ne.am._AM;
-import anmao.mc.ne.enchantment.N_E_S;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -15,11 +17,11 @@ public class NekoMirrorEvent {
     public static class NME{
         @SubscribeEvent
         public static void onHurt(LivingHurtEvent event){
-            if(!event.getEntity().level().isClientSide){
+            if(NekoMirror.ENABLE && !event.getEntity().level().isClientSide){
                 if (event.getEntity() instanceof ServerPlayer serverPlayer){
                     Iterable<ItemStack> slotlist = serverPlayer.getArmorSlots();
                     for (ItemStack slot : slotlist){
-                        int lvl = slot.getEnchantmentLevel(N_E_S.na_mirror);
+                        int lvl = slot.getEnchantmentLevel(NekoEnchantments.na_mirror);
                         if (lvl > 0){
                             if (lvl * 2 > _AM.getRandomNumber(1,100)){
                                 if (event.getSource().getEntity() instanceof LivingEntity livingEntity){

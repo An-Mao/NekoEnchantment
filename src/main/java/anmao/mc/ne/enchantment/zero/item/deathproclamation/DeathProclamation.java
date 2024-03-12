@@ -1,5 +1,7 @@
 package anmao.mc.ne.enchantment.zero.item.deathproclamation;
 
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.zero.item.ZeroItemE;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -8,6 +10,8 @@ import net.minecraft.world.entity.Mob;
 import org.jetbrains.annotations.NotNull;
 
 public class DeathProclamation extends ZeroItemE {
+    public static final boolean ENABLE = EnchantmentsConfig.INSTANCE.isEnable(EnchantmentRegister.Z_DP);
+    private final float quota = EnchantmentsConfig.INSTANCE.getValue(EnchantmentRegister.Z_DP,"quota");
     public DeathProclamation() {
         super(Rarity.VERY_RARE);
     }
@@ -21,7 +25,7 @@ public class DeathProclamation extends ZeroItemE {
         if (pAttacker instanceof ServerPlayer){
             if (pTarget instanceof Mob livingEntity){
                 if (livingEntity.deathTime == 0){
-                    livingEntity.deathTime = (int) (livingEntity.getHealth() * -100);
+                    livingEntity.deathTime = (int) (livingEntity.getHealth() * -quota);
                 }
             }
         }

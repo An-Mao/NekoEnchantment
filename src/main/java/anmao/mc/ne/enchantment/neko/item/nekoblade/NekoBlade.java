@@ -1,5 +1,7 @@
 package anmao.mc.ne.enchantment.neko.item.nekoblade;
 
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.neko.item.NekoEI;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobType;
@@ -10,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import java.util.Collection;
 
 public class NekoBlade extends NekoEI {
+    private final float base = EnchantmentsConfig.INSTANCE.getConfig(EnchantmentRegister.NEKO_BLADE).getParameters().get("baseDamage").getAsFloat();
     public NekoBlade() {
         super(Rarity.VERY_RARE);
     }
@@ -26,7 +29,7 @@ public class NekoBlade extends NekoEI {
             }
             float x = enchantedItem.getDamageValue();
             float y = enchantedItem.getMaxDamage();
-            return (float) (addDamage * (0.15F + x / y));
+            return (float) (addDamage * (base + x / y));
         }
         return 0;
     }

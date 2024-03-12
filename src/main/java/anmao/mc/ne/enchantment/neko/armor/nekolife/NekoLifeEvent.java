@@ -2,7 +2,9 @@ package anmao.mc.ne.enchantment.neko.armor.nekolife;
 
 import anmao.mc.ne.NE;
 import anmao.mc.ne.am._AM;
-import anmao.mc.ne.enchantment.N_E_S;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -14,10 +16,10 @@ public class NekoLifeEvent {
     public static class NLE {
         @SubscribeEvent
         public static void onHurt(LivingHurtEvent event){
-            if ( event.getEntity() instanceof ServerPlayer player && !player.level().isClientSide){
+            if (NekoLife.ENABLE && event.getEntity() instanceof ServerPlayer player && !player.level().isClientSide){
                 Iterable<ItemStack> slotlist = player.getArmorSlots();
                 for (ItemStack slot : slotlist){
-                    int lvl = slot.getEnchantmentLevel(N_E_S.na_life);
+                    int lvl = slot.getEnchantmentLevel(NekoEnchantments.na_life);
                     if (lvl > 0){
                         if (lvl * 15 > _AM.getRandomNumber(1,100)){
                             double min_damage = player.getMaxHealth() * 0.2;

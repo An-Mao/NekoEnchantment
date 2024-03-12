@@ -1,6 +1,8 @@
 package anmao.mc.ne.enchantment.phenomenon.duality;
 
-import anmao.mc.ne.am._AM_Item;
+import anmao.mc.amlib.item.ItemHelper;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.phenomenon.PhenomenonEnchantment;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -11,6 +13,8 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import org.jetbrains.annotations.NotNull;
 
 public class Duality extends PhenomenonEnchantment {
+    public static final boolean ENABLE = EnchantmentsConfig.INSTANCE.isEnable(EnchantmentRegister.DUALITY);
+    private final float quota = EnchantmentsConfig.INSTANCE.getValue(EnchantmentRegister.DUALITY,"quota");
     public Duality() {
         super(EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND);
     }
@@ -25,7 +29,7 @@ public class Duality extends PhenomenonEnchantment {
         if (enchantedItem.getTag() != null){
             float duality = enchantedItem.getTag().getInt("duality");
             if (duality < 0) {
-                duality = (float) (_AM_Item.getItemDamage(enchantedItem) * -duality / 10);
+                duality = (float) (ItemHelper.getItemDamage(enchantedItem) * - duality / quota);
                 return duality;
             }
         }

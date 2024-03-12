@@ -1,8 +1,8 @@
 package anmao.mc.ne.enchantment.phenomenon.myriadphenomena;
 
+import anmao.mc.amlib.item.ItemHelper;
 import anmao.mc.ne.NE;
-import anmao.mc.ne.am._AM_Item;
-import anmao.mc.ne.enchantment.N_E_S;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -24,7 +24,7 @@ public class MyriadPhenomenaEvent {
     private static final String MPKey = "MyriadPhenomenaEnchantment";
     @SubscribeEvent
     public static void onHurt(LivingHurtEvent event){
-        if (!event.getEntity().level().isClientSide){
+        if (MyriadPhenomena.ENABLE && !event.getEntity().level().isClientSide){
             if (event.getSource().getEntity() instanceof LivingEntity livingEntity){
                 Map<Enchantment, Integer> es = getEnchant(livingEntity.getMainHandItem());
                 if (es != null) {
@@ -41,8 +41,8 @@ public class MyriadPhenomenaEvent {
     }
     @SubscribeEvent
     public static void onAnvil(AnvilUpdateEvent event){
-        if (event.getPlayer() instanceof ServerPlayer){
-            if (_AM_Item.hasEnchant(event.getLeft(),N_E_S.myriad_phenomena)){
+        if (MyriadPhenomena.ENABLE && event.getPlayer() instanceof ServerPlayer){
+            if (ItemHelper.hasEnchant(event.getLeft(), NekoEnchantments.myriad_phenomena)){
                 ItemStack rightItem = event.getRight();
                 if(rightItem.getItem() == Items.BAMBOO) {
                     ItemStack outItem = event.getLeft().copy();
@@ -50,7 +50,7 @@ public class MyriadPhenomenaEvent {
                         ListTag listTag = outItem.getEnchantmentTags().copy();
                         outItem.getTag().put(MPKey, listTag);
                         outItem.getEnchantmentTags().clear();
-                        outItem.enchant(N_E_S.myriad_phenomena, 1);
+                        outItem.enchant(NekoEnchantments.myriad_phenomena, 1);
                         event.setMaterialCost(1);
                         event.setCost(1);
                         event.setOutput(outItem);

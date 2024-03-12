@@ -2,6 +2,8 @@ package anmao.mc.ne.enchantment.zero.item.deathproclamation;
 
 import anmao.mc.amlib.component.ComponentStyle;
 import anmao.mc.ne.NE;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.Entity;
@@ -16,7 +18,7 @@ public class DPEvent {
     private static final String DEAD_TIP = "cn.ne.death_pro";
     @SubscribeEvent
     public static void onTick(LivingEvent.LivingTickEvent event){
-        if (event != null && event.getEntity() instanceof Mob mob){
+        if (DeathProclamation.ENABLE && event != null && event.getEntity() instanceof Mob mob){
             int deathTime = mob.deathTime;
             if (deathTime == -1){
                 if (mob.getLastDamageSource() == null) {
@@ -35,7 +37,7 @@ public class DPEvent {
     }
     @SubscribeEvent
     public static void onDead(LivingDeathEvent event){
-        if (event.getEntity() instanceof Mob mob) {
+        if (DeathProclamation.ENABLE && event.getEntity() instanceof Mob mob) {
             if (mob.deathTime < 0) {
                 mob.setHealth(mob.getMaxHealth());
                 event.setCanceled(true);

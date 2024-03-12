@@ -25,7 +25,6 @@ public class ZenStick extends SSE {
                 for (;i < 18 ;i++){
                     String tag = "chaodulv"+i;
                     if (!pTarget.getTags().contains(tag)){
-                        //pTarget.setCustomName(Component.literal("[超度]"+i));
                         pTarget.addTag(tag);
                         break;
                     }

@@ -1,8 +1,8 @@
 package anmao.mc.ne.enchantment.spirit.armor.stance;
 
+import anmao.mc.amlib.entity.player.PlayerInvasionSlotCDT;
 import anmao.mc.ne.NE;
-import anmao.mc.ne.am._AM_Item;
-import anmao.mc.ne.enchantment.N_E_S;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.ItemStack;
@@ -16,9 +16,9 @@ public class StanceEvent {
     public static class SE{
         @SubscribeEvent
         public static void onHurt(LivingHurtEvent event){
-            if (event.getEntity() instanceof ServerPlayer serverPlayer){
-                ItemStack item =  serverPlayer.getSlot(_AM_Item.CHEST_SLOT).get();
-                if (item.getEnchantmentLevel(N_E_S.oa_stance) > 0){
+            if (Stance.ENABLE && event.getEntity() instanceof ServerPlayer serverPlayer){
+                ItemStack item =  serverPlayer.getSlot(PlayerInvasionSlotCDT.CHEST_SLOT).get();
+                if (item.getEnchantmentLevel(NekoEnchantments.oa_stance) > 0){
                     if (event.getSource().getEntity() != null) {
                         double dis = serverPlayer.getEyePosition().distanceTo(event.getSource().getEntity().getEyePosition());
                         if (dis > getPlayerAtkRange(serverPlayer)){

@@ -1,9 +1,10 @@
 package anmao.mc.ne.enchantment.phenomenon.theworld;
 
+import anmao.mc.amlib.amlib.the$world.TheWorld;
+import anmao.mc.amlib.entity.EntityHelper;
+import anmao.mc.amlib.item.ItemHelper;
 import anmao.mc.ne.NE;
-import anmao.mc.ne.am._AM_Item;
-import anmao.mc.ne.enchantment.N_E_S;
-import net.minecraft.nbt.CompoundTag;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -15,32 +16,25 @@ import net.minecraftforge.fml.common.Mod;
 public class TheWorldEvent {
     @SubscribeEvent
     public static void onAttack(LivingAttackEvent event){
-        Entity entity = event.getEntity();
-        Entity sEntity = event.getSource().getEntity();
-        if (entity == null || sEntity == null){
-            return;
-        }
-        if (entity instanceof ServerPlayer player && !(sEntity instanceof ServerPlayer)){
-            if (EnchantmentHelper.getEnchantmentLevel(N_E_S.the_world,player) > 0) {
-                setTheWorldTime(sEntity);
+        if (TheWorldEnchantment.ENABLE) {
+            Entity entity = event.getEntity();
+            Entity sEntity = event.getSource().getEntity();
+            if (entity == null || sEntity == null) {
+                return;
             }
-        }else if (sEntity instanceof ServerPlayer serverPlayer) {
-            if (_AM_Item.hasEnchant(serverPlayer.getMainHandItem(), N_E_S.the_world)) {
-                setTheWorldTime(entity);
-                //entity.load(nbt);
-                //System.out.println(gameTime+"::::" + entity.getPersistentData().getLong("theWorld"));
-                /*
-                if (entity instanceof Mob mob) {
-                    mob.setNoAi(true);
+            if (entity instanceof ServerPlayer player && !(sEntity instanceof ServerPlayer)) {
+                if (EnchantmentHelper.getEnchantmentLevel(NekoEnchantments.the_world, player) > 0) {
+                    setTheWorldTime(sEntity);
                 }
-                 */
+            } else if (sEntity instanceof ServerPlayer serverPlayer) {
+                if (ItemHelper.hasEnchant(serverPlayer.getMainHandItem(), NekoEnchantments.the_world)) {
+                    setTheWorldTime(entity);
+                }
             }
         }
     }
     public static void setTheWorldTime(Entity e){
-        CompoundTag nbt = e.getPersistentData();
-        long gameTime = e.level().getGameTime();
-        //Log.LOG.debug("the World:" + gameTime);
-        nbt.putLong("theWorld", gameTime);
+        TheWorld.SetTheWorldState(e,true);
+        TheWorld.SetTheWorldTime(e, EntityHelper.getLevelTime(e));
     }
 }

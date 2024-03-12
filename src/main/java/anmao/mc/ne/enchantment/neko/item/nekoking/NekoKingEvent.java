@@ -3,7 +3,9 @@ package anmao.mc.ne.enchantment.neko.item.nekoking;
 
 import anmao.mc.ne.NE;
 import anmao.mc.ne.am._AM_Constant;
-import anmao.mc.ne.enchantment.N_E_S;
+import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
+import anmao.mc.ne.enchantment.EnchantmentRegister;
+import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +20,7 @@ public class NekoKingEvent {
     public static class ForgeEvent {
         @SubscribeEvent
         public static void onAnvil(AnvilUpdateEvent anvilUpdateEvent) {
-            if (!anvilUpdateEvent.getPlayer().level().isClientSide && anvilUpdateEvent.getLeft().getEnchantmentLevel(N_E_S.ni_king) > 0){
+            if (NekoKing.ENABLE && !anvilUpdateEvent.getPlayer().level().isClientSide && anvilUpdateEvent.getLeft().getEnchantmentLevel(NekoEnchantments.ni_king) > 0){
                 //int sn = anvilUpdateEvent.getRight().getCount();
                 //if (anvilUpdateEvent.getPlayer().experienceProgress < sn * 100){return;}
                 Item ritem = anvilUpdateEvent.getRight().getItem();
