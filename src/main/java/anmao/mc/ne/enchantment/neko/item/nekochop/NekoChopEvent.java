@@ -1,9 +1,7 @@
 package anmao.mc.ne.enchantment.neko.item.nekochop;
 
+import anmao.mc.amlib.math._Random;
 import anmao.mc.ne.NE;
-import anmao.mc.ne.am._AM;
-import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
-import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -38,7 +36,7 @@ public class NekoChopEvent{
                     int a = getA(de);
                     int lvl = player.getMainHandItem().getEnchantmentLevel(NekoEnchantments.ni_chop);
                     if (lvl > 0) {
-                        if (lvl * 15 > _AM.getRandomNumber(1, 100)) {
+                        if (lvl * 15 > _Random.getIntRandomNumber(1, 100)) {
                             if (a > -1 && a < 6){de.spawnAtLocation(MOB_HEAD[a]);}
                         }
                     }

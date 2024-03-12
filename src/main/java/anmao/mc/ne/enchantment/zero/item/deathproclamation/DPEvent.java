@@ -2,8 +2,6 @@ package anmao.mc.ne.enchantment.zero.item.deathproclamation;
 
 import anmao.mc.amlib.component.ComponentStyle;
 import anmao.mc.ne.NE;
-import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
-import anmao.mc.ne.enchantment.EnchantmentRegister;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.Entity;

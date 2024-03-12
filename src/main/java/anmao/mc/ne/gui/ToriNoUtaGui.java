@@ -32,7 +32,7 @@ public class ToriNoUtaGui {
     private static double d = 0;
     public static boolean start = false;
     private static double t;
-    private static HashMap<Integer,TNUGD> map = new HashMap<>();
+    private static final HashMap<Integer, FeatherData> map = new HashMap<>();
     public static void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
         if (ToriNoUta.ENABLE && showEffects){
             LocalPlayer player = Minecraft.getInstance().player;
@@ -60,7 +60,6 @@ public class ToriNoUtaGui {
                             PoseStack pose = guiGraphics.pose();
                             pose.pushPose();
                             pose.translate(centerX +y, centerY - x,0);
-                            //pose.mulPose(new Quaternionf(new AxisAngle4d(angles + fr,0,0,1)));
                             guiGraphics.renderItem(feather, x, y);
                             pose.popPose();
                         }
@@ -68,24 +67,24 @@ public class ToriNoUtaGui {
                         t = 0;
                         if (map.isEmpty()){
                             for (int i = 0; i < quota ; i++){
-                                map.put(i,getRandow(screenWidth,screenHeight));
+                                map.put(i, getRandom(screenWidth,screenHeight));
                             }
                         }
-                        HashMap<Integer,TNUGD> newMap = new HashMap<>(map);
-                        newMap.forEach((integer, tnugd) -> {
-                            if (tnugd != null){
-                                tnugd.y += tnugd.speed;
-                                tnugd.x += (int) (tnugd.p + (_Random.getRandomFloat() - 0.5f) * 2);
+                        HashMap<Integer, FeatherData> newMap = new HashMap<>(map);
+                        newMap.forEach((integer, featherData) -> {
+                            if (featherData != null){
+                                featherData.y += featherData.speed;
+                                featherData.x += (int) (featherData.p + (_Random.getRandomFloat() - 0.5f) * 2);
                                 PoseStack pose = guiGraphics.pose();
                                 pose.pushPose();
-                                pose.scale(tnugd.resizing,tnugd.resizing,tnugd.resizing);
-                                pose.mulPose(new Quaternionf(new AxisAngle4d(tnugd.revolve,0,0,1)));
-                                guiGraphics.blit(image,tnugd.x,tnugd.y,0,0,16,16,16,16);
+                                pose.scale(featherData.resizing, featherData.resizing, featherData.resizing);
+                                pose.mulPose(new Quaternionf(new AxisAngle4d(featherData.revolve,0,0,1)));
+                                guiGraphics.blit(image, featherData.x, featherData.y,0,0,16,16,16,16);
                                 pose.popPose();
-                                if (tnugd.y > screenHeight || tnugd.x > screenWidth || tnugd.x < 0){
-                                    map.put(integer,getRandow(screenWidth,screenHeight));
+                                if (featherData.y > screenHeight || featherData.x > screenWidth || featherData.x < 0){
+                                    map.put(integer, getRandom(screenWidth,screenHeight));
                                 }else {
-                                    map.put(integer,tnugd);
+                                    map.put(integer, featherData);
                                 }
                             }
                         });
@@ -137,25 +136,25 @@ public class ToriNoUtaGui {
             }
         }
     }
-    private static TNUGD getRandow(int screenWidth,int screenHeight){
-        TNUGD tnugd = new TNUGD();
-        tnugd.x = _Random.getIntRandomNumber(0,screenWidth);
-        tnugd.y = 0;
-        tnugd.revolve = r * _Random.getIntRandomNumber(0,360);
-        tnugd.speed = _Random.getIntRandomNumber(1, 3);
-        tnugd.resizing = (float) _Random.getIntRandomNumber(5, 15) / 10;
-        tnugd.p = _Random.getIntRandomNumber(-3,3);
-        return tnugd;
+    private static FeatherData getRandom(int screenWidth, int screenHeight){
+        FeatherData featherData = new FeatherData();
+        featherData.x = _Random.getIntRandomNumber(0,screenWidth);
+        featherData.y = 0;
+        featherData.revolve = r * _Random.getIntRandomNumber(0,360);
+        featherData.speed = _Random.getIntRandomNumber(1, 3);
+        featherData.resizing = (float) _Random.getIntRandomNumber(5, 15) / 10;
+        featherData.p = _Random.getIntRandomNumber(-3,3);
+        return featherData;
     }
-    public static class TNUGD{
+    public static class FeatherData {
         public int x,y,speed,p;
         public double revolve;
         public float resizing;
-        public TNUGD(){}
+        public FeatherData(){}
 
         @Override
         public String toString() {
-            return "TNUGD{" +
+            return "FeatherData{" +
                     "x=" + x +
                     ", y=" + y +
                     ", revolve=" + revolve +

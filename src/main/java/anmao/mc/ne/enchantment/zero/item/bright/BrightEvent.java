@@ -1,8 +1,6 @@
 package anmao.mc.ne.enchantment.zero.item.bright;
 
 import anmao.mc.ne.NE;
-import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
-import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;

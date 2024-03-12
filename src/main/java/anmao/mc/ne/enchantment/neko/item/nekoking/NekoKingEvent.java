@@ -2,9 +2,6 @@ package anmao.mc.ne.enchantment.neko.item.nekoking;
 
 
 import anmao.mc.ne.NE;
-import anmao.mc.ne.am._AM_Constant;
-import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
-import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.Item;
@@ -36,7 +33,7 @@ public class NekoKingEvent {
                     ItemStack oitem = anvilUpdateEvent.getLeft().copy();
                     CompoundTag oitemnbt = oitem.getTag();
                     if (oitemnbt != null) {
-                        oitemnbt.putInt(_AM_Constant.ENCHANTMENT_KEY_REFINE,oitemnbt.getInt(_AM_Constant.ENCHANTMENT_KEY_REFINE) + re);
+                        oitemnbt.putInt(NekoKing.ENCHANTMENT_KEY_REFINE,oitemnbt.getInt(NekoKing.ENCHANTMENT_KEY_REFINE) + re);
                     }
                     oitem.setTag(oitemnbt);
                     anvilUpdateEvent.setOutput(oitem);

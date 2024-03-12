@@ -6,6 +6,7 @@ import anmao.mc.ne.enchantment.neko.item.NekoEI;
 import net.minecraft.world.item.ItemStack;
 
 public class NekoLove extends NekoEI {
+    public static final String ENCHANTMENT_KEY_LOVE = "love";
     public static final boolean ENABLE = EnchantmentsConfig.INSTANCE.isEnable(EnchantmentRegister.NEKO_LOVE);
     public NekoLove() {
         super(Rarity.VERY_RARE);

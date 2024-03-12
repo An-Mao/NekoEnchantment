@@ -7,6 +7,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 
 public class NekoBlessing extends NekoEA {
+    public static final String ENCHANTMENT_KEY_BLESSING = "blessing";
     public static final boolean ENABLE = EnchantmentsConfig.INSTANCE.isEnable(EnchantmentRegister.NEKO_BLESSING);
     public NekoBlessing() {
         super(Rarity.VERY_RARE);

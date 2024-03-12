@@ -1,7 +1,5 @@
 package anmao.mc.ne.enchantment;
 
-import anmao.mc.ne.NE;
-import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;

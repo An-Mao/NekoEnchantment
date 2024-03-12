@@ -1,9 +1,6 @@
 package anmao.mc.ne.enchantment.zero.item.alone;
 
 import anmao.mc.ne.NE;
-import anmao.mc.ne.am._AM_Constant;
-import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
-import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
@@ -20,9 +17,9 @@ public class AloneEvent {
             if (item.getEnchantmentLevel(NekoEnchantments.zi_alone) >0 && item.getAllEnchantments().size() == 1){
                 int amount = 0;
                 if (item.getTag() != null) {
-                    amount = item.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_ALONE);
+                    amount = item.getTag().getInt(Alone.ENCHANTMENT_KEY_ALONE);
                 }
-                item.getTag().putInt(_AM_Constant.ENCHANTMENT_KEY_ALONE,amount+1);
+                item.getTag().putInt(Alone.ENCHANTMENT_KEY_ALONE,amount+1);
             }
         }
     }

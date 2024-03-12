@@ -1,6 +1,6 @@
 package anmao.mc.ne.enchantment.zero.item.purify;
 
-import anmao.mc.ne.am._AM;
+import anmao.mc.amlib.math._Random;
 import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
 import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.zero.item.ZeroItemE;
@@ -23,7 +23,7 @@ public class Purify extends ZeroItemE {
     public void doPostAttack(@NotNull LivingEntity pAttacker, @NotNull Entity pTarget, int pLevel) {
         if (pAttacker instanceof ServerPlayer){
             if (pTarget instanceof LivingEntity livingEntity){
-                if (_AM.getRandomNumber(1,100) < probability) {
+                if (_Random.getIntRandomNumber(1,100) < probability) {
                     //nbt.putByte("NoAI", (byte) 1);
                     CompoundTag dat = livingEntity.getPersistentData();
                     Iterable<String> keys = dat.getAllKeys();

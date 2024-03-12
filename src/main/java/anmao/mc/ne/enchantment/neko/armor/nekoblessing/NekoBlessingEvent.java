@@ -2,7 +2,6 @@ package anmao.mc.ne.enchantment.neko.armor.nekoblessing;
 
 import anmao.mc.amlib.math._Math;
 import anmao.mc.ne.NE;
-import anmao.mc.ne.am._AM_Constant;
 import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
 import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.NekoEnchantments;
@@ -30,8 +29,8 @@ public class NekoBlessingEvent {
                             int lvl = slot.getEnchantmentLevel(NekoEnchantments.na_blessing);
                             if (lvl > 0) {
                                 if (slot.getTag() != null) {
-                                    int blessing = slot.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_BLESSING);
-                                    slot.getTag().putInt(_AM_Constant.ENCHANTMENT_KEY_BLESSING, (int) (blessing + add));
+                                    int blessing = slot.getTag().getInt(NekoBlessing.ENCHANTMENT_KEY_BLESSING);
+                                    slot.getTag().putInt(NekoBlessing.ENCHANTMENT_KEY_BLESSING, (int) (blessing + add));
                                 }
                             }
                         }
@@ -49,8 +48,8 @@ public class NekoBlessingEvent {
                             int lvl = slot.getEnchantmentLevel(NekoEnchantments.na_blessing);
                             if (lvl > 0) {
                                 if (slot.getTag() != null) {
-                                    int blessing = slot.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_BLESSING);
-                                    slot.getTag().putInt(_AM_Constant.ENCHANTMENT_KEY_BLESSING, (int) (blessing - dec));
+                                    int blessing = slot.getTag().getInt(NekoBlessing.ENCHANTMENT_KEY_BLESSING);
+                                    slot.getTag().putInt(NekoBlessing.ENCHANTMENT_KEY_BLESSING, (int) (blessing - dec));
                                 }
                             }
                         }
@@ -69,9 +68,9 @@ public class NekoBlessingEvent {
                             int lvl = slot.getEnchantmentLevel(NekoEnchantments.na_blessing);
                             if (lvl > 0) {
                                 if (slot.getTag() != null) {
-                                    int blessing = slot.getTag().getInt(_AM_Constant.ENCHANTMENT_KEY_BLESSING);
+                                    int blessing = slot.getTag().getInt(NekoBlessing.ENCHANTMENT_KEY_BLESSING);
                                     if (blessing >= 1) {
-                                        slot.getTag().putInt(_AM_Constant.ENCHANTMENT_KEY_BLESSING, blessing - 1);
+                                        slot.getTag().putInt(NekoBlessing.ENCHANTMENT_KEY_BLESSING, blessing - 1);
                                         amount *= 0.9F - (float) _Math.log2Floor(blessing) / 100.0f;
                                     }
                                 }

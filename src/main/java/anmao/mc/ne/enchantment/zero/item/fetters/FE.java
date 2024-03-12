@@ -1,8 +1,6 @@
 package anmao.mc.ne.enchantment.zero.item.fetters;
 
 import anmao.mc.ne.NE;
-import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
-import anmao.mc.ne.enchantment.EnchantmentRegister;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingEvent;

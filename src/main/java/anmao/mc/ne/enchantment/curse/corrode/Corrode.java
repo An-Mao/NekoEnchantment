@@ -1,6 +1,6 @@
 package anmao.mc.ne.enchantment.curse.corrode;
 
-import anmao.mc.ne.am._AM;
+import anmao.mc.amlib.math._Random;
 import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
 import anmao.mc.ne.enchantment.EnchantmentRegister;
 import anmao.mc.ne.enchantment.curse.CurseEnchantmentCore;
@@ -17,7 +17,7 @@ public class Corrode extends CurseEnchantmentCore {
     @Override
     public void doPostAttack(@NotNull LivingEntity pAttacker, @NotNull Entity pTarget, int pLevel) {
         if (pAttacker instanceof ServerPlayer){
-            if (_AM.getRandomNumber(1,100) < pLevel * probability) {
+            if (_Random.getIntRandomNumber(1,100) < pLevel * probability) {
                 ItemStack item = pAttacker.getMainHandItem();
                 int damage = Math.max(1, (item.getMaxDamage() - item.getDamageValue()) / 2);
                 damage += item.getDamageValue();
