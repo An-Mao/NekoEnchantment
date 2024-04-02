@@ -18,6 +18,11 @@ public class EnchantmentCore extends Enchantment {
         super(pRarity, pCategory, pApplicableSlots);
         this.nameColor = chatFormatting;
     }
+    @Override
+    public int getMinCost(int pLevel) {
+        return 30;
+    }
+
     @NotNull
     @Override
     public  Component getFullname(int pLevel) {
@@ -28,5 +33,18 @@ public class EnchantmentCore extends Enchantment {
             mutablecomponent.append(CommonComponents.SPACE).append(Component.translatable("enchantment.level." + pLevel));
         }
         return mutablecomponent;
+    }
+
+    @Override
+    public boolean isTradeable() {
+        return false;
+    }
+    @Override
+    public boolean isTreasureOnly() {
+        return true;
+    }
+    @Override
+    public boolean isDiscoverable() {
+        return super.isDiscoverable();
     }
 }

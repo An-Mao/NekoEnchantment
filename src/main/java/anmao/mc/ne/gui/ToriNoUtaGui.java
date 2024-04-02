@@ -27,7 +27,7 @@ public class ToriNoUtaGui {
     private static final float quota = EnchantmentsConfig.INSTANCE.getValue(EnchantmentRegister.TORI_NO_UTA,"quota");
     private static final ItemStack feather = new ItemStack(Items.FEATHER);
     private static final double a =  2 * Math.PI / quota;
-    private static final double fr = -45.0 * Math.PI / 180.0;;
+    private static final double fr = -45.0 * Math.PI / 180.0;
     private static final double r = Math.PI / 360;
     private static double d = 0;
     public static boolean start = false;

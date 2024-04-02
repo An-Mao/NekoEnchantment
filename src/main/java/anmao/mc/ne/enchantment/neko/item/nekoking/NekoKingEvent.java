@@ -1,7 +1,9 @@
 package anmao.mc.ne.enchantment.neko.item.nekoking;
 
 
+import anmao.mc.amlib.entity.player.PlayerHelper;
 import anmao.mc.ne.NE;
+import anmao.mc.ne.config.neko$king.NekoKingConfig;
 import anmao.mc.ne.enchantment.NekoEnchantments;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.Item;
@@ -10,6 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 
 
 public class NekoKingEvent {
@@ -21,24 +24,20 @@ public class NekoKingEvent {
                 //int sn = anvilUpdateEvent.getRight().getCount();
                 //if (anvilUpdateEvent.getPlayer().experienceProgress < sn * 100){return;}
                 Item ritem = anvilUpdateEvent.getRight().getItem();
-                int re = 0;
-                if (ritem == Items.IRON_INGOT){
-                    re = 1;
-                } else if (ritem == Items.DIAMOND) {
-                    re = 5;
-                } else if (ritem == Items.NETHERITE_INGOT) {
-                    re = 20;
-                }
+                int re = NekoKingConfig.INSTANCE.getRefine(ritem);
                 if (re > 0){
                     ItemStack oitem = anvilUpdateEvent.getLeft().copy();
+                    int count = anvilUpdateEvent.getRight().getCount();
                     CompoundTag oitemnbt = oitem.getTag();
                     if (oitemnbt != null) {
-                        oitemnbt.putInt(NekoKing.ENCHANTMENT_KEY_REFINE,oitemnbt.getInt(NekoKing.ENCHANTMENT_KEY_REFINE) + re);
+                        oitemnbt.putInt(NekoKing.ENCHANTMENT_KEY_REFINE,oitemnbt.getInt(NekoKing.ENCHANTMENT_KEY_REFINE) + (re * count));
                     }
                     oitem.setTag(oitemnbt);
+                    int exp = NekoKingConfig.INSTANCE.getExp(ritem) * count;
+                    exp = PlayerHelper.getLevelFromExperience(exp);
                     anvilUpdateEvent.setOutput(oitem);
-                    anvilUpdateEvent.setCost(7 * re);
-                    anvilUpdateEvent.setMaterialCost(1);
+                    anvilUpdateEvent.setCost(exp);
+                    anvilUpdateEvent.setMaterialCost(count);
                 }
             }
         }

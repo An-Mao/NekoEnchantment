@@ -10,9 +10,10 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.Map;
 
 public class EnchantmentsConfig extends JsonConfig<Map<String, EnchantmentsConfigData>> {
+    public static final String file = ConfigCore.ConfigDir +"enchantments.json";
     public static final EnchantmentsConfig INSTANCE = new EnchantmentsConfig();
     public EnchantmentsConfig() {
-        super(ConfigCore.ConfigDir +"enchantments.json", EnchantmentsConfigDefaultData.data, new TypeToken<>() {
+        super(file, EnchantmentsConfigDefaultData.data, new TypeToken<>() {
         });
     }
 

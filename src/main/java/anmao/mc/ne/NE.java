@@ -12,7 +12,6 @@ public class NE
 {
     public static final String MOD_ID = "ne";
     public NE(){
-        ConfigCore.init();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         Effects.register(modEventBus);
         EnchantmentRegister.register(modEventBus);
