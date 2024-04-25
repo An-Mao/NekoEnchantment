@@ -26,11 +26,8 @@ public class NekoGod extends NekoEI {
             if (p > _Random.getIntRandomNumber(1, 100)) {
                 //32767
                 p = Math.max(0.0F, mob.getHealth() - mob.getMaxHealth() * (serverPlayer.experienceLevel / lvl) * pLevel);
-                //System.out.println("count:"+p);
                 if (p == 0.0F) {
                     mob.setHealth(0.00001F);
-                    //mob.hurt(serverPlayer.damageSources().genericKill(),Float.MAX_VALUE);
-                    //mob.dropAllDeathLoot();
                     mob.die(serverPlayer.damageSources().genericKill());
                     mob.remove(Entity.RemovalReason.KILLED);
                 } else {

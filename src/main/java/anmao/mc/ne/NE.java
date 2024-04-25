@@ -1,6 +1,5 @@
 package anmao.mc.ne;
 
-import anmao.mc.ne.config.ConfigCore;
 import anmao.mc.ne.effect.Effects;
 import anmao.mc.ne.enchantment.EnchantmentRegister;
 import net.minecraftforge.eventbus.api.IEventBus;

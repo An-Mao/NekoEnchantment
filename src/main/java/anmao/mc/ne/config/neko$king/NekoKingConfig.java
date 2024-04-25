@@ -2,10 +2,8 @@ package anmao.mc.ne.config.neko$king;
 
 import anmao.mc.amlib.json.JsonConfig;
 import anmao.mc.ne.config.ConfigCore;
-import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Map;

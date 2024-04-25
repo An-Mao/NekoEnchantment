@@ -56,6 +56,7 @@ public class NekoEnchantments extends EnchantmentRegister{
     public static Enchantment rainOfArrows = getEnchantment(RAIN_OF_ARROWS);
 
     public static Enchantment toriNoUta = getEnchantment(TORI_NO_UTA);
+    public static Enchantment chainHarvesting = getEnchantment(ChainHarvesting);
 
 
 

@@ -255,6 +255,13 @@ public class EnchantmentsConfigDefaultData {
                   "quota": 7,
                   "showEffects": true
                 }
+              },
+              "chain_harvesting": {
+                "enable": true,
+                "parameters":{
+                  "radius": 8,
+                  "depths": 3
+                }
               }
             }""";
 }

@@ -47,6 +47,7 @@ import anmao.mc.ne.enchantment.zero.item.fetters.Fetters;
 import anmao.mc.ne.enchantment.zero.item.indestructible.Indestructible;
 import anmao.mc.ne.enchantment.zero.item.purify.Purify;
 import anmao.mc.ne.enchantment.zero.item.unbreakable.Unbreakable;
+import anmao.mc.ne.enchantment.zero.tool.ChainHarvesting;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -106,6 +107,7 @@ public class EnchantmentRegister {
     public static RegistryObject<Enchantment> RAIN_OF_ARROWS = reg("rain_of_arrows", RainOfArrows::new);
     public static RegistryObject<Enchantment> TORI_NO_UTA = reg("tori_no_uta", ToriNoUta::new);
 
+    public static RegistryObject<Enchantment> ChainHarvesting = reg("chain_harvesting", ChainHarvesting::new);
 
     public static RegistryObject<Enchantment> B_DRINK_BLOOD = reg("b_vampirism", Vampirism::new);
     public static RegistryObject<Enchantment> B_COAGULATION = reg("b_coagulation", Coagulation::new);
