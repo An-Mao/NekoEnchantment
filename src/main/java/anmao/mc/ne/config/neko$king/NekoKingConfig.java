@@ -1,6 +1,6 @@
 package anmao.mc.ne.config.neko$king;
 
-import anmao.dev.easy_json.JsonConfig;
+import anmao.dev.core.json.JsonConfig;
 import anmao.mc.ne.config.ConfigCore;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.world.item.Item;

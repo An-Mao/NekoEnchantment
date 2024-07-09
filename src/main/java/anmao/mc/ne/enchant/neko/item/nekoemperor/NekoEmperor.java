@@ -22,9 +22,12 @@ public class NekoEmperor extends NekoEI {
         CompoundTag nbt = EnchantHelper.getEnchantData(enchantedItem).getTagCopy();
         CompoundTag em = nbt.getCompound("emperor.data");
         kill += em.getFloat(ENCHANTMENT_KEY_KILL) / quota;
+        /*
         em.putFloat(ENCHANTMENT_KEY_KILL, kill);
         nbt.put("emperor.data", em);
         EnchantHelper.setEnchantData(enchantedItem, nbt);
+
+         */
         return kill;
     }
 }

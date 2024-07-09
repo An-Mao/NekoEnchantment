@@ -1,6 +1,6 @@
 package anmao.mc.ne.config.enchantments$config;
 
-import anmao.dev.easy_json.JsonConfig;
+import anmao.dev.core.json.JsonConfig;
 import anmao.mc.ne.config.ConfigCore;
 import anmao.mc.ne.core.Enchant;
 import com.google.gson.JsonObject;

@@ -1,6 +1,6 @@
 package anmao.mc.ne.enchant.zero.bow.rain_of_arrows;
 
-import anmao.mc.amlib.math._Random;
+import anmao.dev.core.math._Random;
 import anmao.mc.ne.NE;
 import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
 import anmao.mc.ne.core.EnchantHelper;

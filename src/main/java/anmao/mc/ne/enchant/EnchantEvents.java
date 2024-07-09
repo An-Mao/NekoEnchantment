@@ -1,6 +1,6 @@
 package anmao.mc.ne.enchant;
 
-import anmao.mc.amlib.color._ColorCDT;
+import anmao.dev.core.color._ColorCDT;
 import anmao.mc.amlib.component.ComponentStyle;
 import anmao.mc.ne.NE;
 import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;

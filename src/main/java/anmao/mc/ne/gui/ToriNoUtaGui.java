@@ -1,7 +1,7 @@
 package anmao.mc.ne.gui;
 
-import anmao.mc.amlib.math._MathCDT;
-import anmao.mc.amlib.math._Random;
+import anmao.dev.core.math._MathCDT;
+import anmao.dev.core.math._Random;
 import anmao.mc.ne.NE;
 import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
 import anmao.mc.ne.core.EnchantHelper;

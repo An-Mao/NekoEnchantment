@@ -2,7 +2,7 @@ package anmao.mc.ne.enchant.blood.vampirism;
 
 import anmao.mc.amlib.attribute.AttributeHelper;
 import anmao.mc.amlib.item.ItemHelper;
-import anmao.mc.amlib.math._Math;
+import anmao.dev.core.math._Math;
 import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
 import anmao.mc.ne.core.EnchantReg;
 import anmao.mc.ne.enchant.blood.BloodEnchant;

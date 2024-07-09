@@ -1,6 +1,6 @@
 package anmao.mc.ne.enchant.spirit.sword.moye;
 
-import anmao.mc.amlib.math._Random;
+import anmao.dev.core.math._Random;
 import anmao.mc.ne.config.enchantments$config.EnchantmentsConfig;
 import anmao.mc.ne.core.EnchantHelper;
 import anmao.mc.ne.core.EnchantReg;

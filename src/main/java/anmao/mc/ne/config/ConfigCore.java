@@ -1,6 +1,6 @@
 package anmao.mc.ne.config;
 
-import anmao.mc.amlib.system._File;
+import anmao.dev.core.system._File;
 
 public class ConfigCore {
     public static final String ConfigDir = _File.getFileFullPathWithRun("config/NekoEnchantment/");

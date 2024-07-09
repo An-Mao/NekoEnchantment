@@ -1,6 +1,6 @@
 package anmao.mc.ne.enchant.neko.armor.nekomirror;
 
-import anmao.mc.amlib.math._Random;
+import anmao.dev.core.math._Random;
 import anmao.mc.ne.NE;
 import anmao.mc.ne.core.EnchantHelper;
 import anmao.mc.ne.core.Enchants;
